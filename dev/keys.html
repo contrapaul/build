@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clicker key test: build.contrapaul.com</title>
+<style>
+  body { margin: 0; background: #07080c; color: #f3f4f8; font: 20px/1.5 system-ui, sans-serif; padding: 6vh 6vw; }
+  h1 { font-size: 40px; margin: 0 0 .3em; }
+  p { color: #8b90a5; max-width: 60ch; }
+  table { border-collapse: collapse; margin-top: 3vh; min-width: 60%; }
+  td, th { text-align: left; padding: .4em 1em; border-bottom: 1px solid rgba(255,255,255,.12); font-family: ui-monospace, Menlo, monospace; }
+  th { color: #8b90a5; font-weight: 600; }
+  .ok { color: #a6e635; } .no { color: #ff5f6d; }
+</style>
+</head>
+<body>
+<h1>Clicker key test</h1>
+<p>Press every button on the clicker, one at a time. Each press is listed with what the talk does with it. Anything marked "not mapped" needs adding to js/deck.js. This page never reloads, even on F5.</p>
+<table>
+  <thead><tr><th>key</th><th>code</th><th>shift</th><th>in the talk</th></tr></thead>
+  <tbody id="log"></tbody>
+</table>
+<script>
+  var MAP = {
+    ArrowDown: 'next frame', ArrowRight: 'next frame', PageDown: 'next frame', ' ': 'next frame (Shift: previous)',
+    ArrowUp: 'previous frame', ArrowLeft: 'previous frame', PageUp: 'previous frame',
+    Home: 'first frame', End: 'last frame',
+    b: 'blank screen', B: 'blank screen', '.': 'blank screen',
+    f: 'full screen', F: 'full screen', F5: 'full screen',
+    '1': 'Talk tab', '2': 'Start tab', '3': 'Projects tab', '4': 'Glossary tab',
+    Escape: 'leaves full screen (browser)'
+  };
+  document.addEventListener('keydown', function (e) {
+    e.preventDefault();
+    var tr = document.createElement('tr');
+    var what = MAP[e.key];
+    [e.key === ' ' ? 'Space' : e.key, e.code, e.shiftKey ? 'yes' : '', what || 'not mapped'].forEach(function (v, i) {
+      var td = document.createElement('td');
+      td.textContent = v;
+      if (i === 3) td.className = what ? 'ok' : 'no';
+      tr.appendChild(td);
+    });
+    var log = document.getElementById('log');
+    log.insertBefore(tr, log.firstChild);
+  });
+</script>
+</body>
+</html>

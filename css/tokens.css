@@ -1,0 +1,92 @@
+/* ============================================================
+   build.contrapaul.com: design tokens
+   ------------------------------------------------------------
+   Dark is the default (the projector, the showcase look). Light
+   is for phones, chosen by js/theme.js. Every colour the site
+   uses is a token here, so both themes stay in step.
+
+   Fonts are committed in /fonts (SIL Open Font License, see the
+   OFL-*.txt files beside them). Nothing is fetched from another
+   host: the talk is in Shenzhen.
+   ============================================================ */
+
+@font-face { font-family: 'Barlow Condensed'; src: url('../fonts/BarlowCondensed-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; src: url('../fonts/BarlowCondensed-ExtraBold.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Barlow Condensed'; src: url('../fonts/BarlowCondensed-Black.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+@font-face { font-family: 'Barlow'; src: url('../fonts/Barlow-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Barlow'; src: url('../fonts/Barlow-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Barlow'; src: url('../fonts/Barlow-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Barlow'; src: url('../fonts/Barlow-SemiBold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+:root {
+  --font-display: 'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Section hues. Each frame sets --hue from one of these. */
+  --hue-intro: #8b6cff;
+  --hue-made: #ff5f6d;
+  --hue-how: #2fd4f0;
+  --hue-build: #a6e635;
+  --hue-habits: #ffbe2e;
+  --hue-close: #f472b6;
+  --hue-start: #2fd4f0;
+  --hue-projects: #ff5f6d;
+  --hue-glossary: #8b6cff;
+
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+
+  --bar-h: 56px;
+  --gutter: clamp(20px, 6vw, 112px);
+}
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #07080c;
+  --bg-raise: #10121b;
+  --bg-sunk: #040507;
+  --ink: #f3f4f8;
+  --ink-soft: #c6c9d6;
+  --muted: #8b90a5;
+  --line: rgba(255, 255, 255, .12);
+  --line-strong: rgba(255, 255, 255, .28);
+  --glow-strength: .34;
+  --grain-opacity: .07;
+  --card: rgba(16, 18, 27, .82);
+  --code-bg: rgba(255, 255, 255, .06);
+  --placeholder: rgba(255, 255, 255, .04);
+  --shadow: 0 30px 80px rgba(0, 0, 0, .55);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f5f1;
+  --bg-raise: #ffffff;
+  --bg-sunk: #ebe9e2;
+  --ink: #12141c;
+  --ink-soft: #33384a;
+  --muted: #646a7d;
+  --line: rgba(18, 20, 28, .12);
+  --line-strong: rgba(18, 20, 28, .3);
+  --glow-strength: .16;
+  --grain-opacity: .04;
+  --card: rgba(255, 255, 255, .92);
+  --code-bg: rgba(18, 20, 28, .06);
+  --placeholder: rgba(18, 20, 28, .04);
+  --shadow: 0 24px 60px rgba(18, 20, 28, .16);
+
+  /* Hues darkened so text in them stays readable on a light page. */
+  --hue-intro: #5b3fe0;
+  --hue-made: #d6303f;
+  --hue-how: #0a8fb0;
+  --hue-build: #4f8a0b;
+  --hue-habits: #b77800;
+  --hue-close: #c02a7f;
+  --hue-start: #0a8fb0;
+  --hue-projects: #d6303f;
+  --hue-glossary: #5b3fe0;
+}
