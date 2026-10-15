@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>build.contrapaul.com</title>
+<meta name="description" content="Not a prompt talk: how I actually build learning websites with AI. The talk, a guide to your first website, my projects, and a glossary.">
+<meta name="theme-color" content="#07080c">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>
+  /* Pre-paint theme: mirrors resolveInitialTheme() in js/theme.js. */
+  (function () {
+    var h = (location.hash || '').replace('#', '').toLowerCase();
+    var t = null;
+    try { t = localStorage.getItem('build-theme'); } catch (e) {}
+    if (h === 'light' || h === 'dark') t = h;
+    if (t !== 'light' && t !== 'dark') {
+      var narrow = matchMedia('(max-width: 760px)').matches;
+      t = narrow && !matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.classList.add('js');
+  })();
+</script>
+<link rel="preload" href="fonts/BarlowCondensed-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Barlow-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/frames.css">
+<script src="js/vendor/qrcode.js" defer></script>
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+
+<header class="bar">
+  <a class="brand" href="#/talk/1">build<span>.contrapaul.com</span></a>
+  <nav aria-label="Tabs">
+    <ul class="tabs">
+      <li><a href="#/talk" data-tab-link="talk">Talk<kbd>1</kbd></a></li>
+      <li><a href="#/start" data-tab-link="start">Start<kbd>2</kbd></a></li>
+      <li><a href="#/projects" data-tab-link="projects">Projects<kbd>3</kbd></a></li>
+      <li><a href="#/glossary" data-tab-link="glossary">Glossary<kbd>4</kbd></a></li>
+    </ul>
+  </nav>
+  <button class="theme-toggle" type="button" data-theme-toggle>Light</button>
+</header>
+
+<main>
+
+<!-- ============================================================
+     TAB 1: TALK
+     One <section class="frame"> per slide. Frame numbers are
+     added by js/deck.js. Section colours: h-intro, h-made,
+     h-how, h-build, h-habits, h-close. Speaker notes are in
+     PLAN.md Part 2, under the same T numbers.
+     ============================================================ -->
+<div class="tab-panel" data-tab="talk" id="talk">
+
+  <!-- T1: Title -->
+  <section class="frame h-intro" aria-label="Title">
+    <div class="inner title-grid">
+      <div>
+        <p class="kicker" data-reveal>17 October 2026, Shenzhen</p>
+        <h1 class="display" data-words>Not a <span class="accent">&ldquo;prompt talk&rdquo;</span></h1>
+        <p class="lede" data-reveal style="--d: 600ms">How I actually build learning websites with AI</p>
+        <p class="byline" data-reveal style="--d: 800ms"><b>Paul Kwiatkowski</b>, design teacher</p>
+      </div>
+      <div class="qr-item" data-reveal="zoom" style="--d: 1000ms">
+        <div class="qr" data-qr="https://build.contrapaul.com/"></div>
+        <span class="label">Follow along</span>
+        <span class="mono">build.contrapaul.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- T2: What the room said -->
+  <section class="frame h-intro" aria-label="What the room said">
+    <div class="inner">
+      <p class="kicker" data-reveal>You said</p>
+      <h2 class="h1" data-words><span class="fill">[top three words]</span></h2>
+      <p class="lede" data-reveal style="--d: 700ms">Most of us picture a <a class="gloss" data-term="chatbot" href="#/glossary/chatbot">chat window</a>. That is the smallest version of this.</p>
+    </div>
+  </section>
+
+  <!-- T3: Who I am -->
+  <section class="frame h-intro" aria-label="Who I am">
+    <div class="inner">
+      <p class="kicker" data-reveal>Who I am</p>
+      <h2 class="h1" data-words>Design teacher. <span class="outline">Not a developer.</span></h2>
+      <div class="stats">
+        <div class="stat" data-reveal><div class="n">800+</div><div class="l">changes to one education site since April</div></div>
+        <div class="stat" data-reveal><div class="n">12</div><div class="l">live sites</div></div>
+        <div class="stat" data-reveal><div class="n">30+</div><div class="l">classroom tools</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T4: Divider, things I've made -->
+  <section class="frame h-made is-divider" aria-label="Things I've made">
+    <div class="inner">
+      <p class="kicker" data-reveal>Part one</p>
+      <h2 class="display" data-words>Things <span class="accent">I&rsquo;ve made</span></h2>
+      <div class="ph" data-reveal style="margin-top: 4vh">Montage: 3 to 5 seconds each of four or five sites, looping, under 10 MB (media/montage.mp4)</div>
+    </div>
+  </section>
+
+  <!-- T5 to T7: resources -->
+  <section class="frame h-made" aria-label="Resource 1">
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>01</p>
+        <h2 class="h2" data-words><span class="fill">[Resource 1]</span></h2>
+        <p class="lede" data-reveal><span class="fill">[The problem it solves]</span></p>
+        <p class="lede" data-reveal style="font-size: .7em"><span class="fill">[How long it took]</span></p>
+      </div>
+      <div class="ph" data-reveal="right">Looping screen recording of the resource in use, plus a QR code to it</div>
+    </div>
+  </section>
+
+  <section class="frame h-made" aria-label="Resource 2">
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>02</p>
+        <h2 class="h2" data-words><span class="fill">[Resource 2]</span></h2>
+        <p class="lede" data-reveal><span class="fill">[The problem it solves]</span></p>
+        <p class="lede" data-reveal style="font-size: .7em"><span class="fill">[How long it took]</span></p>
+      </div>
+      <div class="ph" data-reveal="right">Looping screen recording of the resource in use, plus a QR code to it</div>
+    </div>
+  </section>
+
+  <section class="frame h-made" aria-label="Resource 3">
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>03</p>
+        <h2 class="h2" data-words><span class="fill">[Resource 3]</span></h2>
+        <p class="lede" data-reveal><span class="fill">[The problem it solves]</span></p>
+        <p class="lede" data-reveal style="font-size: .7em"><span class="fill">[How long it took]</span></p>
+      </div>
+      <div class="ph" data-reveal="right">Looping screen recording of the resource in use, plus a QR code to it</div>
+    </div>
+  </section>
+
+  <!-- T8: Divider, how it works -->
+  <section class="frame h-how is-divider" aria-label="How it actually works">
+    <div class="inner">
+      <p class="kicker" data-reveal>Part two</p>
+      <h2 class="display" data-words>Not prompts. <span class="accent">Structure.</span></h2>
+      <p class="lede" data-reveal style="--d: 900ms">What the AI is allowed to do, and where the work lives.</p>
+    </div>
+  </section>
+
+  <!-- T9: Chatbot vs harness -->
+  <section class="frame h-how" aria-label="Chatbot versus harness">
+    <div class="inner">
+      <h2 class="h2" data-words>On the left you are the hands. On the right you are the editor.</h2>
+      <div class="loops">
+        <div class="loop" data-reveal="left">
+          <h3 class="h3"><a class="gloss" data-term="chatbot" href="#/glossary/chatbot">Chatbot</a></h3>
+          <ol>
+            <li class="you"><span class="who">You</span>Ask</li>
+            <li class="ai"><span class="who">AI</span>Answers</li>
+            <li class="you"><span class="who">You</span>Copy and paste into a file</li>
+            <li class="you"><span class="who">You</span>Test it</li>
+            <li class="you"><span class="who">You</span>Paste the error back</li>
+            <li class="you"><span class="who">You</span>Repeat</li>
+          </ol>
+        </div>
+        <div class="loop is-agent" data-reveal="right">
+          <h3 class="h3"><a class="gloss" data-term="agent" href="#/glossary/agent">Agent</a> in a <a class="gloss" data-term="harness" href="#/glossary/harness">harness</a></h3>
+          <ol>
+            <li class="you" style="--i: 0"><span class="who">You</span>Describe the goal</li>
+            <li class="ai" style="--i: 1"><span class="who">AI</span>Reads your project</li>
+            <li class="ai" style="--i: 2"><span class="who">AI</span>Writes the files</li>
+            <li class="ai" style="--i: 3"><span class="who">AI</span>Runs the page and looks at it</li>
+            <li class="ai" style="--i: 4"><span class="who">AI</span>Fixes what is broken</li>
+            <li class="ai" style="--i: 5"><span class="who">AI</span>Saves a change you can undo</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T10: Agentic -->
+  <section class="frame h-how" aria-label="What agentic means">
+    <div class="inner split">
+      <div>
+        <p class="kicker" data-reveal><a class="gloss" data-term="agentic" href="#/glossary/agentic">Agentic</a></p>
+        <h2 class="h1" data-words>It works in a loop until the job is done.</h2>
+        <p class="lede" data-reveal style="--d: 900ms">A tool is anything it can use besides talking: files, code, a browser, the web. <a class="gloss" data-term="tool-use" href="#/glossary/tool-use">Tool use</a> turns an answer into an action.</p>
+      </div>
+      <div class="cycle" data-reveal="zoom" aria-label="Plan, use a tool, check the result, decide what is next">
+        <div class="ring"></div>
+        <div class="node" style="--i: 0">Plan</div>
+        <div class="node" style="--i: 1">Use a tool</div>
+        <div class="node" style="--i: 2">Check the result</div>
+        <div class="node" style="--i: 3">Decide what&rsquo;s next</div>
+        <div class="hub">until<br>done</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T11: Reasoning and thinking -->
+  <section class="frame h-how" aria-label="Reasoning and thinking">
+    <div class="inner split">
+      <div>
+        <p class="kicker" data-reveal><a class="gloss" data-term="reasoning" href="#/glossary/reasoning">Reasoning</a> and <a class="gloss" data-term="thinking" href="#/glossary/thinking">thinking</a></p>
+        <h2 class="h1" data-words>It plans before it types.</h2>
+        <p class="lede" data-reveal style="--d: 700ms">Read the thinking when something goes wrong. It shows you what it misunderstood.</p>
+      </div>
+      <div class="thinking" data-reveal="right">
+        <div class="head">Thinking</div>
+        <div class="body">
+          <span data-reveal style="--d: 900ms">The brief says the clicker sends Page Down.</span>
+          <span data-reveal style="--d: 1300ms">So Page Down must step frames exactly like the arrow keys.</span>
+          <span data-reveal style="--d: 1700ms">F5 normally reloads the page. Mid-talk, that would be a disaster.</span>
+          <span data-reveal style="--d: 2100ms">Map F5 to full screen and stop the reload.</span>
+        </div>
+        <div class="answer" data-reveal style="--d: 2600ms">Done. Page Down, the arrows and Space all step frames; F5 goes full screen.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T12: AI agnostic -->
+  <section class="frame h-how" aria-label="It is AI agnostic">
+    <div class="inner">
+      <p class="kicker" data-reveal>AI agnostic</p>
+      <h2 class="h1" data-words>Any agentic <a class="gloss" data-term="model" href="#/glossary/model">model</a>, in any <a class="gloss" data-term="harness" href="#/glossary/harness">harness</a>.</h2>
+      <div class="names">
+        <span data-reveal>Claude Code</span>
+        <span data-reveal>OpenAI Codex</span>
+        <span data-reveal>GitHub Copilot agent mode</span>
+        <span data-reveal>Cursor</span>
+        <span data-reveal>Gemini CLI</span>
+      </div>
+      <p class="note" data-reveal>Tools change every few months. The habits don&rsquo;t. In mainland China, most of these need a VPN.</p>
+    </div>
+  </section>
+
+  <!-- T13: The repo -->
+  <section class="frame h-how" aria-label="The repo: permanence">
+    <div class="inner split">
+      <div>
+        <p class="kicker" data-reveal>Permanence is the point</p>
+        <h2 class="h1" data-words>A chat disappears. <span class="accent">A repo remembers.</span></h2>
+        <p class="lede" data-reveal style="--d: 900ms">A chat has a memory limit, a <a class="gloss" data-term="context-window" href="#/glossary/context-window">context window</a>. A <a class="gloss" data-term="repo" href="#/glossary/repo">repo</a> keeps every file and every saved change.</p>
+      </div>
+      <div class="stack-gap">
+        <div class="chat-fade" data-reveal>&ldquo;Remember last week when we fixed the scoreboard?&rdquo;</div>
+        <div class="repo-stack">
+          <div class="c" data-reveal="right"><span class="h">f2f16e8</span>A break after round 5, in the house look<span class="d">Sep 24</span></div>
+          <div class="c" data-reveal="right"><span class="h">c9af771</span>Add a handoff document<span class="d">Sep 23</span></div>
+          <div class="c" data-reveal="right"><span class="h">2a88d90</span>Mandarin and pinyin for every phrase<span class="d">Sep 21</span></div>
+          <div class="c" data-reveal="right"><span class="h">51aca5b</span>Build the trivia site: gate, deck, five round themes, live scoreboard<span class="d">Sep 21</span></div>
+        </div>
+        <p class="mono" data-reveal style="color: var(--muted)">Real <a class="gloss" data-term="commit" href="#/glossary/commit">commits</a> from my trivia night repo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- T14: Device or cloud -->
+  <section class="frame h-how" aria-label="On your device or in the cloud">
+    <div class="inner">
+      <h2 class="h1" data-words>On your device, or in the cloud.</h2>
+      <div class="where">
+        <div class="panel" data-reveal="left">
+          <h3 class="h3">My laptop</h3>
+          <p>A <a class="gloss" data-term="local-session" href="#/glossary/local-session">local session</a> sees my files and opens a <a class="gloss" data-term="live-preview" href="#/glossary/live-preview">live preview</a>.</p>
+        </div>
+        <div class="meet" data-reveal="zoom">The repo<small>THE MEETING POINT</small></div>
+        <div class="panel" data-reveal="right">
+          <h3 class="h3">The cloud</h3>
+          <p>A <a class="gloss" data-term="cloud-session" href="#/glossary/cloud-session">cloud session</a> starts from a browser or my phone, works on a <a class="gloss" data-term="clone" href="#/glossary/clone">copy</a>, and sends it back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T15: Divider, let's build this site -->
+  <section class="frame h-build is-divider" aria-label="Let's build this site">
+    <div class="inner">
+      <p class="kicker" data-reveal>Part three</p>
+      <h2 class="display" data-words>You&rsquo;re looking at <span class="accent">the example.</span></h2>
+      <p class="lede" data-reveal style="--d: 900ms">This site did not exist on 15 October. Here is every step, with the real files.</p>
+    </div>
+  </section>
+
+  <!-- T16: Step 1, the plan -->
+  <section class="frame h-build" aria-label="Step 1: the plan">
+    <div class="inner split wide-right">
+      <div>
+        <div class="step-no" data-reveal>1</div>
+        <h2 class="h1" data-words>The plan</h2>
+        <p class="lede" data-reveal style="--d: 700ms">I wrote what I wanted, in plain English, and asked for a <a class="gloss" data-term="plan" href="#/glossary/plan">plan</a>. Not code.</p>
+      </div>
+      <div class="file" data-reveal="right">
+        <div class="tab"><b>PLAN.md</b>, the <a class="gloss" data-term="brief" href="#/glossary/brief">brief</a>, quoted word for word</div>
+<pre><span class="dim">&gt;</span> I'll start with cloud.contrapaul.com and a question. Following that I'll switch tabs and jump to <strong>build.contrapaul.com</strong>, which will be a new website that is both a presentation and a guide.
+<span class="dim">&gt;</span> I want to have a multi-tab page ... with the ability to use <span class="hi">keyboard shortcuts (arrows)</span> to move between each full screen page element as if they are slides, but the tabs can also be scrolled through conventionally.
+<span class="dim">&gt;</span> The style/inspiration is <span class="hi">slick motion graphics</span>, with the feel of being sliding through/scrolling through a video showcase.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- T17: Step 2, the build -->
+  <section class="frame h-build" aria-label="Step 2: the build">
+    <div class="inner split wide-right">
+      <div>
+        <div class="step-no" data-reveal>2</div>
+        <h2 class="h1" data-words>The build</h2>
+        <p class="lede" data-reveal style="--d: 700ms">First session: the tabs, the frames, the keys. It ran the page, looked at it, and fixed its own mistakes before showing me.</p>
+      </div>
+      <div class="ph" data-reveal="right">Sped-up screen recording of the first build session (media/first-build.mp4)</div>
+    </div>
+  </section>
+
+  <!-- T18: Step 3, my changes -->
+  <section class="frame h-build" aria-label="Step 3: my changes">
+    <div class="inner split wide-right">
+      <div>
+        <div class="step-no" data-reveal>3</div>
+        <h2 class="h1" data-words>Then it&rsquo;s mine</h2>
+        <p class="lede" data-reveal style="--d: 700ms">Some changes I typed myself. Some I described. This is where most of the time goes, and it&rsquo;s the fun part.</p>
+      </div>
+      <div class="ph" data-reveal="right">Two or three real before-and-after pairs from building this site</div>
+    </div>
+  </section>
+
+  <!-- T19: Step 4, commits -->
+  <section class="frame h-build" aria-label="Step 4: commits">
+    <div class="inner split">
+      <div>
+        <div class="step-no" data-reveal>4</div>
+        <h2 class="h1" data-words>Commits</h2>
+        <p class="lede" data-reveal style="--d: 700ms">Every change that works is saved with a note: a <a class="gloss" data-term="commit" href="#/glossary/commit">commit</a>. My undo button and my diary.</p>
+      </div>
+      <ol class="commit-list" id="commit-list">
+        <li data-reveal="right"><code>f9a3d9b</code>Start build.contrapaul.com: plan, rules, handoff<span class="d">Oct 15</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- T20: Step 5, push -->
+  <section class="frame h-build" aria-label="Step 5: push to GitHub">
+    <div class="inner split">
+      <div>
+        <div class="step-no" data-reveal>5</div>
+        <h2 class="h1" data-words>Push to GitHub</h2>
+        <p class="lede" data-reveal style="--d: 700ms"><a class="gloss" data-term="push-pull" href="#/glossary/push-pull">Pushing</a> copies the commits up to <a class="gloss" data-term="github" href="#/glossary/github">GitHub</a>. Now the project lives online, not just on my laptop.</p>
+      </div>
+      <div class="file term-out" data-reveal="right">
+        <div class="tab"><b>Terminal</b></div>
+<pre><span class="line" style="--i: 0"><span class="hi">$</span> git push</span>
+<span class="line" style="--i: 1">To https://github.com/contrapaul/build.git</span>
+<span class="line" style="--i: 2"> * [new branch]      HEAD -&gt; main</span>
+<span class="line" style="--i: 3">branch 'main' set up to track 'origin/main'.</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- T21: Step 6, Cloudflare -->
+  <section class="frame h-build" aria-label="Step 6: live on Cloudflare">
+    <div class="inner split">
+      <div>
+        <div class="step-no" data-reveal>6</div>
+        <h2 class="h1" data-words>Live on Cloudflare</h2>
+        <p class="lede" data-reveal style="--d: 700ms">A <a class="gloss" data-term="static-site" href="#/glossary/static-site">static site</a> is just files. Connect the repo once, and every push goes live in about a minute. On my own <a class="gloss" data-term="domain" href="#/glossary/domain">domain</a>, it works in China.</p>
+      </div>
+      <ol class="steps">
+        <li data-reveal="right"><a class="gloss" data-term="cloudflare-pages" href="#/glossary/cloudflare-pages">Workers &amp; Pages</a>, Create, Pages, Connect to Git</li>
+        <li data-reveal="right">Pick the repo</li>
+        <li data-reveal="right">Leave the build settings blank</li>
+        <li data-reveal="right"><a class="gloss" data-term="deploy" href="#/glossary/deploy">Deploy</a></li>
+        <li data-reveal="right">Add the <a class="gloss" data-term="subdomain" href="#/glossary/subdomain">subdomain</a>: build.contrapaul.com</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- T22: Divider, habits -->
+  <section class="frame h-habits is-divider" aria-label="Habits, rules and tips">
+    <div class="inner">
+      <p class="kicker" data-reveal>Part four</p>
+      <h2 class="display" data-words>What matters <span class="accent">more than prompts.</span></h2>
+    </div>
+  </section>
+
+  <!-- T23: Language specificity -->
+  <section class="frame h-habits" aria-label="Language specificity">
+    <div class="inner">
+      <p class="kicker" data-reveal>Habit: be specific</p>
+      <h2 class="h2" data-words>Name it. Describe it. Say what done looks like.</h2>
+      <div class="split" style="margin-top: 4vh; align-items: start">
+        <blockquote class="quote is-vague" data-reveal="left">Make the video bigger and nicer.<span class="src">VAGUE</span></blockquote>
+        <blockquote class="quote is-sharp" data-reveal="right">The video should load first in a player that fills <mark>~90+% of either horizontal or vertical dimensions</mark>, depending on video size. <mark>Once it ends</mark> I&rsquo;d like it to <mark>dissolve/fade</mark>... and have the question load in, filling much of the screen but <mark>leaving breathing room</mark>.<span class="src">SPECIFIC: MY TRIVIA PROJECT</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- T24: House rules -->
+  <section class="frame h-habits" aria-label="House rules">
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>Habit: write the rules down</p>
+        <h2 class="h1" data-words>Class rules, for the agent.</h2>
+        <p class="lede" data-reveal style="--d: 700ms">Every rule says why. Same mistake twice, and it becomes a rule.</p>
+      </div>
+      <div class="file" data-reveal="right">
+        <div class="tab"><b>trivia/CLAUDE.md</b>, a <a class="gloss" data-term="house-rules" href="#/glossary/house-rules">rules file</a></div>
+<pre><strong>Nothing is fetched from another host, ever.</strong> Fonts are in public/fonts. No CDN, no Google Fonts. <span class="hi">Those are unreachable in China and a blocking request to a dead host stops the page in front of a room full of people.</span>
+
+<strong>Do not add questions.</strong> <span class="hi">TBD in the data means Paul has not settled it.</span>
+
+<strong>Legible from the back of the room.</strong> Every screen is judged at a distance. Bigger is better. Nothing depends on hover.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- T25: Students notice slop -->
+  <section class="frame h-habits" aria-label="Students notice slop">
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>A rule I hold myself to: no AI art</p>
+        <h2 class="h2" data-words>An AI poster, warning you about AI.</h2>
+        <ol class="tells">
+          <li data-reveal style="--d: 1100ms">Slogans that come in threes</li>
+          <li data-reveal style="--d: 2000ms">&ldquo;In today&rsquo;s fast-paced world&rdquo;</li>
+          <li data-reveal style="--d: 2900ms">An em dash, in the advice on how to spot AI writing</li>
+          <li data-reveal style="--d: 3800ms">A QR code that goes nowhere, on a poster about fake sources</li>
+        </ol>
+        <p class="triple" data-reveal style="--d: 5000ms"><span>Students notice.</span><span>Students know.</span><span class="accent">Students judge.</span></p>
+      </div>
+      <figure class="poster-wrap" data-reveal="zoom" style="margin: 0">
+        <img src="media/spot-ai-slop.webp" width="1054" height="1492" alt="An AI-generated infographic titled Can You Spot AI Slop?, with a robot mascot, a surprised student, eight numbered warning signs and a QR code. Shown as an example of AI slop.">
+        <span class="ai-label">AI-generated: shown as an example</span>
+        <span class="ring" style="--x: 21%; --y: 82.5%; --w: 57%; --h: 13%; --i: 0"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="1" d="M50,3 C80,2 99,20 98,50 C97,80 75,98 48,97 C20,96 2,78 3,48 C4,22 22,5 56,6"/></svg></span>
+        <span class="ring" style="--x: 49.5%; --y: 30%; --w: 26%; --h: 9.5%; --i: 1"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="1" d="M48,4 C78,1 98,22 97,52 C96,82 72,98 46,96 C18,94 3,76 4,46 C5,20 24,6 54,7"/></svg></span>
+        <span class="ring" style="--x: 50.5%; --y: 68%; --w: 25%; --h: 7.5%; --i: 2"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="1" d="M52,3 C82,4 99,24 97,52 C95,80 74,97 47,97 C19,97 2,77 4,47 C6,19 26,4 57,6"/></svg></span>
+        <span class="ring" style="--x: 85%; --y: 83%; --w: 15%; --h: 11%; --i: 3"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="1" d="M50,2 C79,3 98,21 98,50 C98,79 77,98 49,98 C21,98 2,79 2,50 C2,22 21,4 55,5"/></svg></span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- T25b: Explain it, and they buy in -->
+  <section class="frame h-habits" aria-label="Explain it, and they buy in">
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>The other side</p>
+        <h2 class="h2" data-words>Tell students what AI made, and why.</h2>
+        <p class="lede" data-reveal style="--d: 800ms">When they see how it was used, and what it made possible, they buy in. We ask students for <a class="gloss" data-term="disclosure" href="#/glossary/disclosure">AI disclosure</a>. We should model it.</p>
+      </div>
+      <div class="ph" data-reveal="right">A real tool of mine with its AI disclosure line visible, or the "how it was made" section of edu.contrapaul.com/ai/about</div>
+    </div>
+  </section>
+
+  <!-- T26: Briefs, plans and handoffs -->
+  <section class="frame h-habits" aria-label="Briefs, plans and handoffs">
+    <div class="inner split">
+      <div>
+        <p class="kicker" data-reveal>Habit: write it down, and make the agent keep it</p>
+        <h2 class="h2" data-words>Brief first. Plan next. Handoff always.</h2>
+        <p class="lede" data-reveal style="--d: 700ms">The agent forgets everything between sessions. The <a class="gloss" data-term="handoff" href="#/glossary/handoff">handoff file</a> is its memory, like a cover note for a substitute.</p>
+        <ul class="toc" data-reveal style="--d: 900ms">
+          <li>Status at a glance</li><li>Ground rules</li><li>Gotchas that have already bitten</li><li>Open items</li><li>Working with Paul</li>
+        </ul>
+      </div>
+      <div class="file" data-reveal="right">
+        <div class="tab"><b>build/CLAUDE.md</b>, the rule that keeps it current</div>
+<pre>After every change that works, add a dated entry to the top of the log in HANDOFF.md: <span class="hi">what was asked, what was built, what was decided and why, and what is still unverified.</span> Update the status section if it changed. <strong>Do this before saying you are finished.</strong></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- T27: Reuse -->
+  <section class="frame h-habits" aria-label="Reuse">
+    <div class="inner">
+      <p class="kicker" data-reveal>Habit: reuse what works</p>
+      <h2 class="h2" data-words>&ldquo;We already have one of those.&rdquo;</h2>
+      <div class="reuse">
+        <div class="row" data-reveal><div class="n">35</div><div class="t">curriculum pages share one <code>curriculum.js</code></div></div>
+        <div class="row" data-reveal><div class="n">10</div><div class="t">activities share one drag-and-sort. The tenth took one sentence: &ldquo;like the one in A3.3&rdquo;</div></div>
+        <div class="row" data-reveal><div class="n">31</div><div class="t">of this site&rsquo;s glossary terms came from my student coding guide</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T28: The story -->
+  <section class="frame h-habits" aria-label="Fixing it live in class">
+    <div class="inner">
+      <p class="kicker" data-reveal>A story</p>
+      <h2 class="h1" data-words>Fixing it live, in class.</h2>
+      <div class="ph" data-reveal style="margin-top: 4vh">One line in large type: the line students said, or the change you made. Or one image or short clip.</div>
+    </div>
+  </section>
+
+  <!-- T29: Quick tips -->
+  <section class="frame h-habits" aria-label="Quick tips">
+    <div class="inner">
+      <p class="kicker" data-reveal>Quick tips</p>
+      <ul class="tips">
+        <li data-reveal>Start with something you need<small>Not something impressive. Need makes you specific.</small></li>
+        <li data-reveal>One change at a time<small>Check it yourself.</small></li>
+        <li data-reveal>When it works, commit<small>Undo is free. Use it.</small></li>
+        <li data-reveal>Ask &ldquo;what is this called?&rdquo;<small>And &ldquo;explain what you just did.&rdquo;</small></li>
+        <li data-reveal>No student data, ever<small>No accounts, no names.</small></li>
+        <li data-reveal>Read the thinking<small>When it goes wrong, that&rsquo;s where the clue is.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- T30: Your turn -->
+  <section class="frame h-close" aria-label="Your turn">
+    <div class="inner">
+      <p class="kicker" data-reveal>Your turn</p>
+      <h2 class="display" data-words>Questions, <span class="accent">or play.</span></h2>
+      <div class="qr-row">
+        <div class="qr-item" data-reveal>
+          <div class="qr" data-qr="https://build.contrapaul.com/#/start"></div>
+          <span class="label">Start: your first site</span>
+          <span class="mono">build.contrapaul.com/#/start</span>
+        </div>
+        <div class="qr-item" data-reveal>
+          <div class="qr" data-qr="https://build.contrapaul.com/#/projects"></div>
+          <span class="label">Projects: play with mine</span>
+          <span class="mono">build.contrapaul.com/#/projects</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T31: Optional live build -->
+  <section class="frame h-close" aria-label="One more thing">
+    <div class="inner">
+      <p class="kicker" data-reveal>If there is time</p>
+      <h2 class="h1" data-words>One more thing.</h2>
+      <p class="lede" data-reveal style="--d: 700ms">One small change to this site, live. Commit, push, and reload in about a minute.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     TAB 2: START
+     ============================================================ -->
+<div class="tab-panel" data-tab="start" id="start">
+
+  <section class="frame h-start" aria-label="Start">
+    <div class="inner">
+      <p class="kicker" data-reveal>Start here</p>
+      <h1 class="display" data-words>Your first site, <span class="accent">live.</span></h1>
+      <p class="lede" data-reveal style="--d: 700ms">A one-page website at your own address, built with an AI <a class="gloss" data-term="coding-agent" href="#/glossary/coding-agent">coding agent</a>. About an hour the first time. Scroll, or use the arrow keys.</p>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="What you need">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>01</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">What you need</h2>
+        <ul>
+          <li>A <a class="gloss" data-term="github" href="#/glossary/github">GitHub</a> account. Free.</li>
+          <li>A Cloudflare account. Free.</li>
+          <li>An AI <a class="gloss" data-term="coding-agent" href="#/glossary/coding-agent">coding agent</a>: Claude Code, OpenAI Codex, GitHub Copilot, Cursor or Gemini CLI. Most need a paid plan. Any <a class="gloss" data-term="agentic" href="#/glossary/agentic">agentic</a> one will do.</li>
+          <li>Optional: your own <a class="gloss" data-term="domain" href="#/glossary/domain">domain</a>, about the price of a coffee a year.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Pick something you need">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>02</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">Pick something you need</h2>
+        <p>Not something impressive. Need makes you specific.</p>
+        <ul>
+          <li>A quiz for one unit, with an explanation for each wrong answer</li>
+          <li>A sorting activity: drag terms into groups</li>
+          <li>A countdown to an exam or event</li>
+          <li>A helper for writing report comments from your own phrases</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Write a brief">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>03</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">Write a one-page brief</h2>
+        <p>Before any code, answer four questions in plain language. That is your <a class="gloss" data-term="brief" href="#/glossary/brief">brief</a>.</p>
+        <ul>
+          <li><b>Who</b> uses it?</li>
+          <li><b>Where?</b> A projector, a phone, a school laptop. Say which <a class="gloss" data-term="viewport" href="#/glossary/viewport">screen</a>.</li>
+          <li><b>What does done look like?</b> &ldquo;A student on a phone can finish it without scrolling sideways.&rdquo;</li>
+          <li><b>What must it never do?</b> &ldquo;Ask for names.&rdquo; &ldquo;Load anything from another website.&rdquo;</li>
+        </ul>
+        <p>A template is at the end of this page.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Route A: in the browser">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>04</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">Build it in the browser</h2>
+        <p>The easiest first route: nothing to install.</p>
+        <ol>
+          <li>On GitHub, create a new, empty <a class="gloss" data-term="repo" href="#/glossary/repo">repo</a>.</li>
+          <li>Open a <a class="gloss" data-term="cloud-session" href="#/glossary/cloud-session">cloud session</a> on it (for example, claude.ai/code).</li>
+          <li>Paste your brief and ask: &ldquo;Write a plan for this. Don&rsquo;t write code yet.&rdquo;</li>
+          <li>Read the <a class="gloss" data-term="plan" href="#/glossary/plan">plan</a>. Change what is wrong. Approve it.</li>
+          <li>Ask it to build, and to add a CLAUDE.md and a HANDOFF.md using the templates below.</li>
+          <li>Review what it made, then <a class="gloss" data-term="merge" href="#/glossary/merge">merge</a> it into your main <a class="gloss" data-term="branch" href="#/glossary/branch">branch</a>.</li>
+        </ol>
+        <p><b>On your own computer instead?</b> Install your agent, <a class="gloss" data-term="clone" href="#/glossary/clone">clone</a> the repo, and follow the same steps in a <a class="gloss" data-term="local-session" href="#/glossary/local-session">local session</a>, with a <a class="gloss" data-term="live-preview" href="#/glossary/live-preview">live preview</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Publish">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>05</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">Publish it</h2>
+        <ol>
+          <li>In Cloudflare: Workers &amp; Pages, Create, Pages, Connect to Git.</li>
+          <li>Choose your repo.</li>
+          <li>Leave the build settings blank. A <a class="gloss" data-term="static-site" href="#/glossary/static-site">static site</a> needs none.</li>
+          <li>Save and <a class="gloss" data-term="deploy" href="#/glossary/deploy">Deploy</a>. You get an address within a minute.</li>
+          <li>Optional: Custom domains, then add a <a class="gloss" data-term="subdomain" href="#/glossary/subdomain">subdomain</a> of your own domain.</li>
+        </ol>
+        <p>From now on, every <a class="gloss" data-term="push-pull" href="#/glossary/push-pull">push</a> goes live by itself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Make it yours">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>06</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">Make it yours</h2>
+        <ul>
+          <li>One change at a time. Check it yourself.</li>
+          <li>When it works, <a class="gloss" data-term="commit" href="#/glossary/commit">commit</a>.</li>
+          <li>Don&rsquo;t know what something is called? Ask. Then use that word.</li>
+          <li>Same mistake twice? Add a rule to your <a class="gloss" data-term="house-rules" href="#/glossary/house-rules">rules file</a>.</li>
+          <li>Something wrong? Read the <a class="gloss" data-term="thinking" href="#/glossary/thinking">thinking</a> to see what it misunderstood.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Before you share it">
+    <div class="inner split wide-left">
+      <div class="num" data-reveal>07</div>
+      <div class="prose" data-reveal>
+        <h2 class="h2">Before you share it</h2>
+        <ul>
+          <li>No student data: no names, no accounts, no tracking.</li>
+          <li>Add a license, so people know what they may reuse.</li>
+          <li>Add an <a class="gloss" data-term="disclosure" href="#/glossary/disclosure">AI disclosure</a> line: what AI made, what you did.</li>
+          <li>No AI images. Use your own, your students&rsquo; (with credit), or none.</li>
+          <li>Open it on a phone.</li>
+        </ul>
+        <h3 class="h3" style="margin-top: 1.4em">Working from mainland China</h3>
+        <ul>
+          <li>Most AI coding tools need a VPN.</li>
+          <li>GitHub works, but can be slow.</li>
+          <li>Cloudflare Pages on your own domain loads normally. <code>*.pages.dev</code> and <code>github.io</code> addresses often don&rsquo;t.</li>
+          <li>Keep everything in the project: no Google Fonts, no CDNs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start guide-step" aria-label="Starter files">
+    <div class="inner">
+      <div class="num" data-reveal>08</div>
+      <h2 class="h2" data-reveal>Starter files</h2>
+      <p class="lede" data-reveal style="font-size: 1.1em">Copy these into your repo. They work with any agent. Some agents look for <code>AGENTS.md</code> instead of <code>CLAUDE.md</code>: check which yours reads.</p>
+      <div class="route" style="margin-top: 4vh">
+        <div class="file copy-block" data-reveal>
+          <div class="tab"><b>BRIEF.md</b></div>
+          <button class="copy" type="button" data-copy="tpl-brief">Copy</button>
+<pre id="tpl-brief"># Brief: [name]
+
+## Who uses it
+[Students in grade X / colleagues / me on a projector]
+
+## Where
+[Projector at 16:9 / phones / school laptops]
+
+## What it does
+[Two or three sentences]
+
+## Done looks like
+- [A student can ... without ...]
+- [It loads in under ... on school wifi]
+
+## Must never
+- Ask for names or accounts
+- Load anything from another website</pre>
+        </div>
+        <div class="file copy-block" data-reveal>
+          <div class="tab"><b>HANDOFF.md</b></div>
+          <button class="copy" type="button" data-copy="tpl-handoff">Copy</button>
+<pre id="tpl-handoff"># Handoff
+
+Newest entry at the top. The agent updates this after every working change.
+
+## Status
+[One paragraph: what works, what does not yet]
+
+## Open items
+- [ ]
+
+## Gotchas that have already bitten
+
+## Log
+### [date]: [what changed]</pre>
+        </div>
+      </div>
+      <div class="file copy-block" data-reveal style="margin-top: 2vw">
+        <div class="tab"><b>CLAUDE.md</b> (or AGENTS.md)</div>
+        <button class="copy" type="button" data-copy="tpl-rules">Copy</button>
+<pre id="tpl-rules"># Rules for this project
+
+Read BRIEF.md and HANDOFF.md before changing anything.
+
+- No student data. No names, no accounts, no tracking. Why: this is public.
+- Nothing is loaded from another website. Fonts and scripts are saved in
+  the project. Why: blocked sites stop the page loading.
+- One change at a time, and say what you changed. Why: I need to check it.
+- Ask before guessing. If the brief does not say, ask me.
+- After every change that works, add a dated entry to the top of
+  HANDOFF.md: what was asked, what was built, what was decided, and what
+  is still unchecked. Do this before telling me you are finished.</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame h-start" aria-label="Where next">
+    <div class="inner">
+      <p class="kicker" data-reveal>Where next</p>
+      <h2 class="h1" data-words>See what it can become.</h2>
+      <p class="lede" data-reveal style="--d: 700ms">The <a href="#/projects">Projects</a> tab has everything from the talk. For students learning to code with AI, there is a bilingual guide at <a href="https://make.contrapaul.com/tools/codewithai/">make.contrapaul.com/tools/codewithai</a>.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     TAB 3: PROJECTS (provisional list: Paul chooses the final one)
+     ============================================================ -->
+<div class="tab-panel" data-tab="projects" id="projects">
+
+  <section class="frame h-projects" aria-label="Projects">
+    <div class="inner">
+      <p class="kicker" data-reveal>Projects</p>
+      <h1 class="display" data-words>Things I&rsquo;ve <span class="accent">made.</span></h1>
+      <p class="lede" data-reveal style="--d: 700ms">All built with an AI coding agent, for real classes. Open them, try them, borrow the ideas.</p>
+    </div>
+  </section>
+
+  <section class="frame h-projects" aria-label="Project list">
+    <div class="inner project-groups">
+
+      <div class="project-group">
+        <h2 class="h3" data-reveal>For marking and admin</h2>
+        <div class="project-cards">
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/assessment/report-card-marking/"><span class="name">Report card comments</span><span class="what">Build report comments from my own rubric phrases.</span><span class="url">edu.contrapaul.com/assessment/report-card-marking</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/assessment/studio-project-marking/"><span class="name">Studio project marking</span><span class="what">Marking tool for the MYP grade 10 studio project.</span><span class="url">edu.contrapaul.com/assessment/studio-project-marking</span></a>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <h2 class="h3" data-reveal>For teaching content</h2>
+        <div class="project-cards">
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/curriculum/dp/"><span class="name">DP Design Technology</span><span class="what">Every subtopic of the new guide, as interactive pages.</span><span class="url">edu.contrapaul.com/curriculum/dp</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/curriculum/myp/"><span class="name">MYP Design</span><span class="what">Units for grades 6 to 10.</span><span class="url">edu.contrapaul.com/curriculum/myp</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/ai/"><span class="name">AI in education</span><span class="what">What AI is now, using it to learn, and where the line is.</span><span class="url">edu.contrapaul.com/ai</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/tools/slop/"><span class="name">Slop</span><span class="what">Spot the tells in AI-generated posters.</span><span class="url">edu.contrapaul.com/tools/slop</span></a>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <h2 class="h3" data-reveal>For activities and play</h2>
+        <div class="project-cards">
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/tools/"><span class="name">All tools</span><span class="what">The full set of classroom tools and activities.</span><span class="url">edu.contrapaul.com/tools</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/tools/papers/"><span class="name">Regulatory Papers, Please</span><span class="what">Take a product from design to market: documents, drop tests, EMC testing.</span><span class="url">edu.contrapaul.com/tools/papers</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/tools/tolerance/"><span class="name">Quality assurance simulator</span><span class="what">Measure what you can before the lot ships, and live with what you missed.</span><span class="url">edu.contrapaul.com/tools/tolerance</span></a>
+          <a class="project-card" data-reveal href="https://edu.contrapaul.com/tools/AshbyChart/"><span class="name">Ashby chart challenge</span><span class="what">Place real materials on a property chart and see the trade-offs.</span><span class="url">edu.contrapaul.com/tools/AshbyChart</span></a>
+          <a class="project-card" data-reveal href="https://games.contrapaul.com/"><span class="name">School arcade</span><span class="what">Browser games for recess: no ads, no accounts.</span><span class="url">games.contrapaul.com</span></a>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <h2 class="h3" data-reveal>For a room full of phones</h2>
+        <div class="project-cards">
+          <a class="project-card" data-reveal href="https://cloud.contrapaul.com/"><span class="name">Cloud</span><span class="what">A live word cloud. Tap an answer you agree with to make it grow.</span><span class="url">cloud.contrapaul.com</span></a>
+          <a class="project-card" data-reveal href="https://blurt.contrapaul.com/"><span class="name">Blurt</span><span class="what">Ten categories, one letter, two minutes. A party game for phones.</span><span class="url">blurt.contrapaul.com</span></a>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <h2 class="h3" data-reveal>For students learning to code</h2>
+        <div class="project-cards">
+          <a class="project-card" data-reveal href="https://make.contrapaul.com/tools/codewithai/"><span class="name">Code with AI</span><span class="what">A bilingual guide for students building webpages with AI.</span><span class="url">make.contrapaul.com/tools/codewithai</span></a>
+          <a class="project-card" data-reveal href="https://make.contrapaul.com/localai/"><span class="name">How local AI works</span><span class="what">Hardware, models and speed, with a simulator.</span><span class="url">make.contrapaul.com/localai</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     TAB 4: GLOSSARY (rendered from js/data/glossary.js)
+     ============================================================ -->
+<div class="tab-panel" data-tab="glossary" id="glossary">
+  <section class="h-glossary" style="padding: calc(var(--bar-h) + 6vh) var(--gutter) 8vh">
+    <div class="inner" style="max-width: 1400px; margin: 0 auto">
+      <p class="kicker">Glossary</p>
+      <h1 class="display">Every word, <span class="accent">defined once.</span></h1>
+      <p class="lede">Hover any dotted word on the site for a short definition. Click it to come here.</p>
+      <ul class="gloss-index" id="glossary-index"></ul>
+      <div id="glossary-list"></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <p>Built by Paul Kwiatkowski with an AI coding agent (Claude Code), October 2026. No AI-generated images, except the poster shown as an example of slop.</p>
+  <p>Nothing on this site loads from another website. Code under the MIT license. Fonts: Barlow and JetBrains Mono, SIL Open Font License.</p>
+</footer>
+
+<nav class="rail" aria-label="Frames"></nav>
+<div class="progress" aria-hidden="true"></div>
+<div id="gloss-tip" role="tooltip" aria-hidden="true"></div>
+<div id="blank" aria-hidden="true"></div>
+
+</body>
+</html>
