@@ -1,3 +1,9 @@
 .DS_Store
 node_modules/
 .wrangler/
+
+# Raw screen recordings: far over the 25 MiB per-file limit. Only the
+# re-encoded .mp4 files beside them are published.
+media/*.mov
+# Temporary copies left by sandboxed file writes.
+*.sb-*

@@ -401,3 +401,72 @@
 .split .names { margin-top: 3vh; gap: .4em; }
 .split .names span { font-size: clamp(15px, 1.05vw + 4px, 28px); }
 .split .note { margin-top: 3vh; font-size: clamp(14px, .8vw + 7px, 21px); }
+
+/* ---------- showcase slides (Projects tab; reusable in the Talk) -----
+   One project per frame: a recording on the left; name, description,
+   address and QR code on the right. Markup:
+     <section class="frame showcase h-made" aria-label="...">
+       <div class="inner showcase-grid">
+         <figure class="showcase-clip" data-reveal="left"><video data-clip ...></figure>
+         <div class="showcase-info"> kicker, h2, .lede, a.addr, .showcase-qr </div>
+       </div>
+     </section>                                                        */
+
+.showcase-grid {
+  display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 64px); align-items: center;
+}
+.showcase-clip { margin: 0; position: relative; }
+.showcase-clip video {
+  display: block; width: 100%; aspect-ratio: 1280 / 716; object-fit: cover;
+  max-height: 70vh;
+  border-radius: 16px; border: 1px solid var(--line-strong);
+  background: var(--bg-sunk); box-shadow: var(--shadow);
+}
+.showcase-clip::after {
+  /* A soft glow in the slide's hue, behind the video. */
+  content: ''; position: absolute; inset: 8% 6% -6%; z-index: -1;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--hue) 35%, transparent), transparent);
+  filter: blur(30px);
+}
+.showcase-info .h2 { font-size: clamp(34px, 3.8vw, 76px); }
+.showcase-info .lede { font-size: clamp(18px, 1.25vw + 6px, 32px); margin-top: 2.4vh; }
+.showcase-info .addr {
+  display: inline-block; margin-top: 2.6vh; padding: .35em .7em; border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--hue) 55%, transparent);
+  font: 700 clamp(13px, .7vw + 7px, 20px) var(--font-mono); color: var(--hue);
+  text-decoration: none; word-break: break-all;
+}
+.showcase-info .addr:hover, .showcase-info .addr:focus-visible { background: color-mix(in srgb, var(--hue) 14%, transparent); outline: none; }
+.showcase-qr { display: flex; align-items: center; gap: 16px; margin-top: 3vh; }
+.showcase-qr .qr { width: clamp(96px, 9vw, 180px); }
+.showcase-qr span { font: 600 clamp(12px, .6vw + 6px, 16px) var(--font-mono); color: var(--muted); max-width: 14ch; line-height: 1.4; }
+.showcase-open { display: none; }
+
+@media (max-width: 900px) {
+  .showcase-grid { grid-template-columns: 1fr; }
+  .showcase-clip video { max-height: none; }
+  .showcase-qr { display: none; }
+  .showcase-open {
+    display: inline-block; margin-top: 2vh; margin-left: .6em; padding: .45em 1em; border-radius: 999px;
+    background: var(--hue); color: var(--bg); font-weight: 600; text-decoration: none;
+  }
+}
+
+/* Slides take turns through the palette. */
+.showcase:nth-of-type(6n+1) { --hue: var(--hue-made); }
+.showcase:nth-of-type(6n+2) { --hue: var(--hue-how); }
+.showcase:nth-of-type(6n+3) { --hue: var(--hue-build); }
+.showcase:nth-of-type(6n+4) { --hue: var(--hue-habits); }
+.showcase:nth-of-type(6n+5) { --hue: var(--hue-close); }
+.showcase:nth-of-type(6n+6) { --hue: var(--hue-intro); }
+
+/* The last Projects slide: compact links to everything without a video. */
+.more-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-top: 4vh; }
+.more-links a {
+  display: grid; gap: .15em; padding: .8em 1em; border-radius: 12px; text-decoration: none;
+  background: var(--bg-raise); border: 1px solid var(--line); transition: border-color .3s, transform .3s var(--ease-out);
+}
+.more-links a:hover, .more-links a:focus-visible { border-color: var(--hue); transform: translateY(-2px); outline: none; }
+.more-links b { font: 800 clamp(18px, 1vw + 8px, 24px) var(--font-display); text-transform: uppercase; }
+.more-links span { font: 400 13px var(--font-mono); color: var(--muted); }

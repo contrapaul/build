@@ -50,6 +50,47 @@ Talk: Saturday 17 October 2026, Shenzhen.
 
 ## Log
 
+### 2026-10-17: Projects tab is showcase slides
+
+- **Asked:**
+  - replace the Projects tab's card style with slides like the Talk and
+    Start tabs
+  - one slide per recording, with name, address, brief details and a QR
+    code
+  - Paul will reuse the style for the Talk's showcase frames (T5 to T7)
+- **Built:**
+  - Ten showcase slides, one per recording in `media/`: AI in Education,
+    Breadboard, Electronics Parts Catalog, Infinite Food Truck, Game
+    Mechanics Catalog, Game Bench, Recommended Games, How Local AI Works,
+    Auditorium Seating Planner and Tome of Secrets.
+  - Each slide has the video playing large on the left. The right side has
+    "Project NN of 10", the name, a one-line description, the address as a
+    link, and a QR code.
+  - On phones the slide stacks, and the QR code becomes an "Open" button.
+  - The descriptions are taken from each site's own page description,
+    trimmed.
+  - Hues rotate through the palette slide by slide.
+  - A final "More to explore" slide keeps the links without a video.
+  - **Reusable markup:** documented at the top of the showcase block in
+    `css/frames.css`. Copy one `<section class="frame showcase">` into the
+    Talk tab.
+- **Media:**
+  - The `.mov` recordings (34 to 268 MB, 1.1 GB in all) were re-encoded to
+    `.mp4`: full speed, 1280 wide, 1.5 Mbps, 4.5 to 14.7 MB each.
+  - `media/*.mov` and `*.sb-*` are now gitignored. The originals stay on
+    Paul's Mac only. Each is over Cloudflare's 25 MiB per-file limit and
+    would break the deploy.
+  - Stills from every recording were checked before publishing: site
+    content only, and the seating planner shows grade blocks, no names.
+- **Verified:**
+  - all 12 Projects slides fit one screen at 1280x720, 1600x900 and
+    1920x1080
+  - only the current slide's video plays, the next preloads, and the rest
+    never load
+  - all 10 QR codes render
+  - the phone layout works with no sideways scroll
+- **Unverified:** Firefox. Rehearse there.
+
 ### 2026-10-16: T25 uses the rainbow goop advert
 
 - **Asked:** replace the AI poster on T25 with `slop-goop.webp`.
