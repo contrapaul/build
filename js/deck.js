@@ -87,6 +87,17 @@ function splitWords(root) {
     }
   };
   walk(root);
+
+  // Punctuation straight after a link ("model</a>, in") must not start a
+  // line: bind it to the word before it.
+  for (const w of Array.from(root.querySelectorAll('.w'))) {
+    const prev = w.previousSibling;
+    if (!/^[,.;:!?)’”]/.test(w.textContent) || !prev || prev.nodeType !== 1) continue;
+    const keep = document.createElement('span');
+    keep.style.whiteSpace = 'nowrap';
+    prev.replaceWith(keep);
+    keep.append(prev, w);
+  }
 }
 
 /* ---------- the deck ------------------------------------------ */
@@ -184,6 +195,7 @@ export function initDeck({ onRoute } = {}) {
         cur = n;
         remembered[tab] = n;
         paintRail();
+        syncMedia();
         const want = `#/${tab}/${n + 1}`;
         if (location.hash !== want && !(tab === 'glossary')) history.replaceState(null, '', want);
       }
@@ -216,6 +228,7 @@ export function initDeck({ onRoute } = {}) {
     if (instant) { stopTween(); scrollTo(0, y); } else scrollToY(y);
     frames[cur].classList.add('is-in');
     paintRail();
+    syncMedia();
     history.replaceState(null, '', `#/${tab}/${cur + 1}`);
   }
 
@@ -321,6 +334,51 @@ export function initDeck({ onRoute } = {}) {
     if (lastXY && Math.hypot(e.clientX - lastXY[0], e.clientY - lastXY[1]) > 24) presenting(false);
     lastXY = [e.clientX, e.clientY];
   }, { passive: true });
+
+  /* ----- video and slideshows follow the current frame ----- */
+  // A clip loads only when its frame is current or next door, plays while
+  // its frame is current, and pauses otherwise, so phones never download
+  // video for frames they do not reach.
+  const still = reducedMotion();
+  function syncMedia() {
+    for (const v of doc.querySelectorAll('video[data-clip]')) if (!frames.some((f) => f.contains(v))) v.pause();
+    for (const s of doc.querySelectorAll('[data-slides]')) if (!frames.some((f) => f.contains(s))) s.dataset.live = '';
+    frames.forEach((f, n) => {
+      const near = Math.abs(n - cur) <= 1;
+      for (const v of f.querySelectorAll('video[data-clip]')) {
+        if (near && v.preload !== 'auto') { v.preload = 'auto'; v.load(); }
+        if (n === cur && !still) v.play().catch(() => {});
+        else v.pause();
+      }
+      for (const s of f.querySelectorAll('[data-slides]')) s.dataset.live = n === cur ? '1' : '';
+    });
+  }
+  for (const v of doc.querySelectorAll('video[data-clip]')) {
+    v.muted = true;
+    if (still) v.controls = true;
+  }
+
+  // Slideshows: one screen at a time, advancing while their frame is current.
+  for (const s of doc.querySelectorAll('[data-slides]')) {
+    const figs = Array.from(s.querySelectorAll('figure'));
+    const dots = s.querySelector('.dots');
+    let i = 0;
+    const show = (n) => {
+      i = (n + figs.length) % figs.length;
+      figs.forEach((f, k) => f.classList.toggle('is-on', k === i));
+      Array.from(dots?.children ?? []).forEach((d, k) => d.classList.toggle('is-on', k === i));
+    };
+    figs.forEach((_, k) => {
+      const b = doc.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', `Screen ${k + 1}`);
+      b.addEventListener('click', () => show(k));
+      dots?.appendChild(b);
+    });
+    show(0);
+    const ms = Number(s.dataset.slides) || 2600;
+    setInterval(() => { if (s.dataset.live === '1' && !doc.hidden) show(i + 1); }, ms);
+  }
 
   /* ----- QR codes: drawn here, nothing fetched ----- */
   for (const box of doc.querySelectorAll('[data-qr]')) {

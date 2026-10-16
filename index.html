@@ -223,22 +223,28 @@
 
   <!-- T12: AI agnostic -->
   <section class="frame h-how" aria-label="It is AI agnostic">
-    <div class="inner">
-      <p class="kicker" data-reveal>AI agnostic</p>
-      <h2 class="h1" data-words>Any agentic <a class="gloss" data-term="model" href="#/glossary/model">model</a>, in any <a class="gloss" data-term="harness" href="#/glossary/harness">harness</a>.</h2>
-      <div class="names">
-        <span data-reveal>Claude Code</span>
-        <span data-reveal>OpenCode</span>
-        <span data-reveal>Deepseek Harness</span>
-        <span data-reveal>Pi Coding Harness</span>
-        <span data-reveal>Qwen3.8 Flash/27B</span>
-        <span data-reveal>OpenAI Codex</span>
-        <span data-reveal>GitHub Copilot agent mode</span>
-        <span data-reveal>Cursor</span>
-        <span data-reveal>Gemini CLI</span>
-        <span data-reveal>Kimi K3</span>
+    <div class="inner split wide-right">
+      <div>
+        <p class="kicker" data-reveal>AI agnostic</p>
+        <h2 class="h2" data-words>Any agentic <a class="gloss" data-term="model" href="#/glossary/model">model</a>, in any <a class="gloss" data-term="harness" href="#/glossary/harness">harness</a>.</h2>
+        <div class="names">
+          <span data-reveal>Claude Code</span>
+          <span data-reveal>OpenCode</span>
+          <span data-reveal>Deepseek Harness</span>
+          <span data-reveal>Pi Coding Harness</span>
+          <span data-reveal>Qwen3.8 Flash/27B</span>
+          <span data-reveal>OpenAI Codex</span>
+          <span data-reveal>GitHub Copilot agent mode</span>
+          <span data-reveal>Cursor</span>
+          <span data-reveal>Gemini CLI</span>
+          <span data-reveal>Kimi K3</span>
+        </div>
+        <p class="note" data-reveal>Models evolve constantly, but we've reached a point where every notable model is useful. Learn more at <a href="https://artificialanalysis.ai/agents/coding-agents">Artificial Analysis</a>.</p>
       </div>
-      <p class="note" data-reveal>Models evolve constantly, but we've reached a point where every notable model is useful. Learn more at <a href="https://artificialanalysis.ai/agents/coding-agents">Artificial Analysis</a>.</p>
+      <figure class="clip" data-reveal="right">
+        <video data-clip src="media/qwen-pi.mp4" muted loop playsinline preload="none" aria-label="Qwen3.8 27B working in the Pi coding harness, in a terminal"></video>
+        <figcaption><span class="speed">2&times;</span>Qwen3.8 27B in the Pi harness, running on my own machine. Cost: $0.000.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -315,7 +321,10 @@
         <h2 class="h1" data-words>The build</h2>
         <p class="lede" data-reveal style="--d: 700ms">First session: the tabs, the frames, the keys. It ran the page, looked at it, and fixed its own mistakes before showing me.</p>
       </div>
-      <div class="ph" data-reveal="right">Sped-up screen recording of the first build session (media/first-build.mp4)</div>
+      <figure class="clip" data-reveal="right">
+        <video data-clip src="media/first-build.mp4" muted loop playsinline preload="none" aria-label="The first build session, sped up: the agent writing files, running the page and fixing problems"></video>
+        <figcaption><span class="speed">30&times;</span>The first build session: 20 minutes in 40 seconds.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -327,7 +336,10 @@
         <h2 class="h1" data-words>Then it&rsquo;s mine</h2>
         <p class="lede" data-reveal style="--d: 700ms">Some changes I typed myself. Some I described. This is where most of the time goes, and it&rsquo;s the fun part.</p>
       </div>
-      <div class="ph" data-reveal="right">Two or three real before-and-after pairs from building this site</div>
+      <figure class="clip" data-reveal="right">
+        <img src="media/vscodebuildpage.webp" width="2966" height="1710" loading="lazy" alt="VS Code with this site's index.html open at the Step 3 and Step 4 frames, with Copilot Chat beside it">
+        <figcaption>Editing these frames by hand in VS Code.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -375,13 +387,35 @@
         <h2 class="h1" data-words>Live on Cloudflare</h2>
         <p class="lede" data-reveal style="--d: 700ms">A <a class="gloss" data-term="static-site" href="#/glossary/static-site">static site</a> is just files. Connect the repo once, and every push goes live in about a minute. On my own <a class="gloss" data-term="domain" href="#/glossary/domain">domain</a>, it works in China.</p>
       </div>
-      <ol class="steps">
-        <li data-reveal="right"><a class="gloss" data-term="cloudflare-pages" href="#/glossary/cloudflare-pages">Workers &amp; Pages</a>, Create, Pages, Connect to Git</li>
-        <li data-reveal="right">Pick the repo</li>
-        <li data-reveal="right">Leave the build settings blank</li>
-        <li data-reveal="right"><a class="gloss" data-term="deploy" href="#/glossary/deploy">Deploy</a></li>
-        <li data-reveal="right">Add the <a class="gloss" data-term="subdomain" href="#/glossary/subdomain">subdomain</a>: build.contrapaul.com</li>
-      </ol>
+      <div class="screens" data-slides="2600" data-reveal="right">
+        <div class="stage">
+          <figure>
+            <img src="media/workerspages.webp" loading="lazy" alt="The Cloudflare dashboard, Workers and Pages, with a Create application button">
+            <figcaption><b>01</b>Workers &amp; Pages: Create application</figcaption>
+          </figure>
+          <figure>
+            <img src="media/makenewpage.webp" loading="lazy" alt="Make something new, with Continue with GitHub highlighted">
+            <figcaption><b>02</b>Continue with GitHub</figcaption>
+          </figure>
+          <figure>
+            <img src="media/creatingwithgithub.webp" loading="lazy" alt="Select a repository, listing contrapaul repositories">
+            <figcaption><b>03</b>Select the repository</figcaption>
+          </figure>
+          <figure>
+            <img src="media/chosenrepo.webp" loading="lazy" alt="Set up your application for contrapaul/build, with an empty build command and a Deploy button">
+            <figcaption><b>04</b>Name it, leave the build command empty, Deploy</figcaption>
+          </figure>
+          <figure>
+            <img src="media/buildsuccess.webp" loading="lazy" alt="A successful build of contrapaul/build">
+            <figcaption><b>05</b>The build succeeds in about 35 seconds</figcaption>
+          </figure>
+          <figure>
+            <img src="media/connectingdomain.webp" loading="lazy" alt="Connect to contrapaul.com, with build typed as the subdomain">
+            <figcaption><b>06</b>Add the subdomain: build.contrapaul.com</figcaption>
+          </figure>
+        </div>
+        <div class="dots"></div>
+      </div>
     </div>
   </section>
 
@@ -633,12 +667,20 @@
       <div class="prose" data-reveal>
         <h2 class="h2">Publish it</h2>
         <ol>
-          <li>In Cloudflare: Workers &amp; Pages, Create, Pages, Connect to Git.</li>
-          <li>Choose your repo.</li>
-          <li>Leave the build settings blank. A <a class="gloss" data-term="static-site" href="#/glossary/static-site">static site</a> needs none.</li>
-          <li>Save and <a class="gloss" data-term="deploy" href="#/glossary/deploy">Deploy</a>. You get an address within a minute.</li>
-          <li>Optional: Custom domains, then add a <a class="gloss" data-term="subdomain" href="#/glossary/subdomain">subdomain</a> of your own domain.</li>
+          <li>In Cloudflare: Workers &amp; Pages, then Create application.</li>
+          <li>Continue with GitHub, and choose your repo.</li>
+          <li>Name the project and leave the build command empty. A <a class="gloss" data-term="static-site" href="#/glossary/static-site">static site</a> needs none.</li>
+          <li><a class="gloss" data-term="deploy" href="#/glossary/deploy">Deploy</a>. You get an address within a minute.</li>
+          <li>Optional: under Domains, add a <a class="gloss" data-term="subdomain" href="#/glossary/subdomain">subdomain</a> of your own domain.</li>
         </ol>
+        <div class="gallery">
+          <figure><a href="media/workerspages.webp" target="_blank" rel="noopener"><img src="media/workerspages.webp" loading="lazy" alt="The Cloudflare dashboard, Workers and Pages, with a Create application button"></a><figcaption><b>01</b>Workers &amp; Pages: Create application</figcaption></figure>
+          <figure><a href="media/makenewpage.webp" target="_blank" rel="noopener"><img src="media/makenewpage.webp" loading="lazy" alt="Make something new, with Continue with GitHub highlighted"></a><figcaption><b>02</b>Continue with GitHub</figcaption></figure>
+          <figure><a href="media/creatingwithgithub.webp" target="_blank" rel="noopener"><img src="media/creatingwithgithub.webp" loading="lazy" alt="Select a repository, listing contrapaul repositories"></a><figcaption><b>03</b>Select the repository</figcaption></figure>
+          <figure><a href="media/chosenrepo.webp" target="_blank" rel="noopener"><img src="media/chosenrepo.webp" loading="lazy" alt="Set up your application for contrapaul/build, with an empty build command and a Deploy button"></a><figcaption><b>04</b>Name it, leave the build command empty, Deploy</figcaption></figure>
+          <figure><a href="media/buildsuccess.webp" target="_blank" rel="noopener"><img src="media/buildsuccess.webp" loading="lazy" alt="A successful build of contrapaul/build"></a><figcaption><b>05</b>The build succeeds in about 35 seconds</figcaption></figure>
+          <figure><a href="media/connectingdomain.webp" target="_blank" rel="noopener"><img src="media/connectingdomain.webp" loading="lazy" alt="Connect to contrapaul.com, with build typed as the subdomain"></a><figcaption><b>06</b>Add the subdomain: build.contrapaul.com</figcaption></figure>
+        </div>
         <p>From now on, every <a class="gloss" data-term="push-pull" href="#/glossary/push-pull">push</a> goes live by itself.</p>
       </div>
     </div>

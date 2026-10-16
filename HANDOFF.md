@@ -6,28 +6,26 @@ should know. Newest log entry at the top. The plan is `PLAN.md`; the rules are
 
 ## Status
 
-P1 (shell) and P2 (glossary) are built and checked locally; the Talk, Start
-and Projects tabs carry first-draft content from PLAN.md. Not yet live:
-Cloudflare Pages is not connected.
+Live at build.contrapaul.com since 2026-10-16. Cloudflare's current Git flow
+deploys it as a Worker with static assets: each push to `main` runs
+`npx wrangler deploy` with no build command. `_headers` is honoured.
+P1 and P2 are done, and the media is in. Paul is editing the text and will
+make more text changes before any other major change.
 
 Talk: Saturday 17 October 2026, Shenzhen.
 
 ## Open items
 
-- [ ] Paul: connect the repo to Cloudflare Pages and add the custom domain
-      build.contrapaul.com. Screenshot every screen for frame T21.
-- [ ] Paul: open `dev/keys.html`, press every clicker button, and report any
-      row marked "not mapped".
+- [ ] Paul: test the clicker on `dev/keys.html` and report any row marked
+      "not mapped".
 - [ ] Paul: choose the three resources for T5 to T7, then trim the Projects
-      tab, which currently lists every candidate from PLAN.md Part 4.
-- [ ] Paul: T2 top three words (typed live, or leave generic), T28 story,
-      T25b example and screenshot, T18 before-and-after pairs.
-- [ ] Media still to record (every dashed "TO ADD" box on the page): T4
-      montage, T5 to T7 loops, T17 first-build recording, T25b screenshot.
-- [ ] Paul: read the 21 new glossary definitions (the entries without a
-      "from codewithai" comment in js/data/glossary.js).
-- [ ] T19 lists this repo's commits by hand: refresh it before the talk.
-- [ ] P6 polish if time: frame transitions, video loops.
+      tab.
+- [ ] Paul: T2 top three words, T28 story, T25b example and screenshot.
+- [ ] Still a dashed box: T4 montage. `~/Downloads/edu-showreel.mp4` (20s,
+      30 MB, with audio) might suit it, but it is over the 25 MiB file
+      limit and would need re-encoding.
+- [ ] Refresh T19's commit list before the talk.
+- [ ] Rehearse in Firefox on the real projector, with the clicker.
 
 ## Gotchas that have already bitten
 
@@ -45,8 +43,57 @@ Talk: Saturday 17 October 2026, Shenzhen.
   fails. Replace it with a `setTimeout` shim in the console before testing.
 - **The `computer` tool's Page_Down sends an empty key.** Test Page Down by
   dispatching a KeyboardEvent instead.
+- **No ffmpeg on this Mac.** Videos were cut with an AVFoundation Swift
+  script: it retimes by a speed factor, drops frames to a steady 30 fps,
+  scales to 1280 wide and encodes H.264 at 2 Mbps with no audio. Keep every
+  file under Cloudflare's 25 MiB per-file limit.
 
 ## Log
+
+### 2026-10-16: media in, marking tools out
+
+- **Asked:**
+  - place Paul's new screenshots and recordings
+  - remove the marking tools entirely ("not very good", soon to be removed
+    from edu)
+- **Built:**
+  - **Videos:**
+    - `media/qwen-pi.mp4`: Qwen3.8 27B in the Pi harness, 2x speed, 44s,
+      10 MB. On T12, beside Paul's list of harnesses.
+    - `media/first-build.mp4`: the first build session at 30x speed, 41s,
+      8.6 MB. On T17.
+    - Clips load only when their frame is current or next door, play while
+      it is current, and pause otherwise.
+  - **Images:**
+    - T18: Paul editing these frames in VS Code (`vscodebuildpage.webp`).
+    - T21: the six Cloudflare screens as a self-advancing slideshow with
+      numbered captions.
+    - Start step 05: the same six screens as a numbered gallery.
+  - **Marking tools:** the "For marking and admin" group is gone from the
+    Projects tab and from PLAN.md. The Start tab still suggests "a helper
+    for writing report comments" as a generic idea; it links to nothing.
+- **Decided:**
+  - T21 and Start step 05 described the old Pages route ("Pages, Connect to
+    Git, leave build settings blank"). Paul's screenshots show the current
+    Workers route, so the T21 step list became captions of the screens and
+    the Start steps were reworded to match. That is the only text changed
+    this session apart from layout.
+  - T12's headline went from h1 to h2 size, and its names render smaller,
+    so the clip fits beside them.
+  - Punctuation straight after a glossary link no longer starts a line in
+    the word-by-word headlines. Seen on T12: ", in any harness".
+  - Paul's uncommitted Glossary heading edit was committed separately under
+    his name (d5e79b7).
+- **Verified:**
+  - every Talk frame fits one screen at 1280x720, 1600x900 and 1920x1080
+  - each clip plays and pauses with its frame
+  - the slideshow advances, and stops off its frame
+  - switching tabs pauses everything
+  - all gallery images load
+  - no console errors, no em dashes
+- **Unverified:**
+  - Firefox playback of the new clips. They are H.264 in MP4, which
+    Firefox supports.
 
 ### 2026-10-15: P1 shell and P2 glossary
 

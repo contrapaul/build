@@ -345,3 +345,59 @@
   background: color-mix(in srgb, var(--hue) 10%, transparent);
   box-shadow: inset 3px 0 0 var(--hue);
 }
+
+/* ---------- media: clips, screenshot slideshow, gallery ------- */
+
+.clip { margin: 0; display: grid; gap: 10px; }
+.clip video, .clip img {
+  width: 100%; height: auto; max-height: 64vh; object-fit: contain;
+  border-radius: 14px; border: 1px solid var(--line-strong);
+  background: var(--bg-sunk); box-shadow: var(--shadow);
+}
+.clip figcaption, .screens figcaption, .gallery figcaption {
+  font: 600 clamp(12px, .7vw + 6px, 16px) var(--font-mono); color: var(--muted); letter-spacing: .02em;
+}
+.clip .speed {
+  display: inline-block; margin-right: .6em; padding: .1em .5em; border-radius: 6px;
+  background: var(--hue); color: var(--bg); font-weight: 700;
+}
+
+/* T21: the publishing screens, one at a time. */
+.screens { position: relative; display: grid; gap: 12px; }
+.screens .stage { position: relative; aspect-ratio: 16 / 10; }
+.screens figure {
+  position: absolute; inset: 0; margin: 0; display: grid; grid-template-rows: 1fr auto; gap: 10px;
+  opacity: 0; transform: translateY(14px) scale(.985);
+  transition: opacity .6s var(--ease-out), transform .8s var(--ease-out);
+}
+.screens figure.is-on { opacity: 1; transform: none; }
+.screens img {
+  width: 100%; height: 100%; object-fit: contain; object-position: center top;
+  border-radius: 14px; background: #fff; border: 1px solid var(--line-strong); box-shadow: var(--shadow);
+}
+.screens figcaption { font-size: clamp(14px, .9vw + 6px, 22px); color: var(--ink-soft); }
+.screens figcaption b { color: var(--hue); margin-right: .5em; }
+.screens .dots { display: flex; gap: 8px; }
+.screens .dots button {
+  width: 28px; height: 4px; padding: 0; border: 0; border-radius: 2px; cursor: pointer;
+  background: var(--line-strong); transition: background .3s;
+}
+.screens .dots button.is-on { background: var(--hue); }
+
+/* Start tab: the same screens as a numbered gallery. */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 1.6em; }
+.gallery figure { margin: 0; display: grid; gap: 6px; }
+.gallery a { display: block; }
+.gallery img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top;
+  border-radius: 10px; border: 1px solid var(--line-strong); background: #fff;
+  transition: transform .3s var(--ease-out), border-color .3s;
+}
+.gallery a:hover img, .gallery a:focus-visible img { transform: translateY(-3px); border-color: var(--hue); }
+.gallery figcaption b { color: var(--hue); margin-right: .4em; }
+@media (max-width: 700px) { .gallery { grid-template-columns: 1fr 1fr; } }
+
+/* T12: the names sit beside a clip, so they run smaller. */
+.split .names { margin-top: 3vh; gap: .4em; }
+.split .names span { font-size: clamp(15px, 1.05vw + 4px, 28px); }
+.split .note { margin-top: 3vh; font-size: clamp(14px, .8vw + 7px, 21px); }
