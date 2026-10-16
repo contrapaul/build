@@ -478,15 +478,16 @@ You choose these. Spend under two minutes on each.
 ### T25: Students notice slop (25:00)
 
 **On screen:**
-- The "Can You Spot AI Slop?" poster, filling the frame and labelled "AI-generated, shown as an example".
-- Then three or four hand-drawn rings land on its tells, one at a time:
-  - the slogans that all come in threes ("Real people. Real thinking. Real impact.")
-  - the generic "In today's fast-paced world"
-  - the QR code, which almost certainly goes nowhere, on a poster warning about fake sources
+- The "AI Slop" rainbow goop advert, filling the frame and labelled "AI-generated, shown as an example". (Changed from the "Can You Spot AI Slop?" poster on 2026-10-16, at Paul's request.)
+- Then four hand-drawn rings land on its tells, one at a time:
+  - every line is a pair of fragments: "Less effort. More slop."
+  - "Harmlessly addictve", and a brain icon that falls apart up close
+  - "Ingredients" decays into "Ingredieats"
+  - four flavors promised, one mixed rainbow in the tub
 - Finally a single line arrives: "Students notice. Students know. Students judge."
 
 **Say:**
-- "An AI-generated poster, warning you about AI-generated content. My students found the problems faster than I did."
+- [Paul's line introducing the goop advert. The tells come from his slop lesson notes in `edu/tools/slop/data/posters.json`.]
 - "Students notice AI art, AI music and every other kind of slop. They know what it is, and they judge it, and they judge whoever put it in front of them."
 - "So my rule is no AI art in anything I make. The AI writes code; the pictures, sound and words students see are mine, theirs, or properly credited."
 - Optional: in Tome of Secrets, contributed art ships in the game with credit.
@@ -494,9 +495,8 @@ You choose these. Spend under two minutes on each.
 **Gloss:** generative AI, slop.
 
 **Media:**
-- `edu/tools/slop/img/spot-ai-slop.webp` (394 KB). These posters were generated deliberately for the slop lesson, and `data/posters.json` records each prompt.
-- For the rings, reuse the regions in `data/posters.json` and the code-drawn ring style from `edu/tools/slop/slop.js`, or your Procreate callouts once they exist.
-- Backup poster: `img/rome.webp`, where the view of ancient Rome includes St Peter's Basilica, finished more than a thousand years after the Western Roman Empire fell.
+- `media/slop-goop.webp`, copied from `edu/tools/slop/img/` (347 KB). These posters were generated deliberately for the slop lesson, and `data/posters.json` records each prompt.
+- The rings are positioned by hand in `index.html` (`--x`, `--y`, `--w`, `--h` as percentages of the poster), drawn in code.
 - `edu.contrapaul.com/tools/slop/` can also go on the Projects tab, since it's a lesson the audience can use.
 
 ### T25b: Explain it, and they buy in (26:15)

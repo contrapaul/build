@@ -50,6 +50,30 @@ Talk: Saturday 17 October 2026, Shenzhen.
 
 ## Log
 
+### 2026-10-16: T25 uses the rainbow goop advert
+
+- **Asked:** replace the AI poster on T25 with `slop-goop.webp`.
+- **Built:**
+  - `media/slop-goop.webp`, copied from `edu/tools/slop/img/`. The old
+    `spot-ai-slop.webp` is removed.
+  - Four new rings, placed by hand and checked on the image:
+    - the "Less effort. More slop." slogan
+    - the Brainrot label
+    - the ingredients panel
+    - "4 flavors"
+- **Decided:**
+  - The old headline and tells described the old poster's slogans in
+    threes, em dash and QR code, so they had to change with it.
+  - New headline: "An AI advert, selling AI slop." Paul to reword.
+  - The four tells are shortened from Paul's own lesson notes in
+    `edu/tools/slop/data/posters.json`.
+  - PLAN.md T25 updated to match. Its speaker line is now a placeholder for
+    Paul.
+  - Paul's text edits were committed first, separately, under his name
+    (edaf1bf).
+- **Verified:** T25 fits one screen at 1280x720, 1600x900 and 1920x1080, and
+  the image loads.
+
 ### 2026-10-16: media in, marking tools out
 
 - **Asked:**
