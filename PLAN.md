@@ -257,7 +257,6 @@ You choose these. Spend under two minutes on each.
 - Avoid going through features one by one.
 
 **Candidates** (live as of 2026-10-10). Check for student names before recording:
-- `edu.contrapaul.com/assessment/report-card-marking/`: the workload one, which always lands.
 - `edu.contrapaul.com/curriculum/dp/a1.1-ergonomics`: curriculum as interactive pages, with a sourced data curve.
 - `edu.contrapaul.com/tools/papers/` ("Regulatory Papers, Please") or `tools/tolerance/`: ideas you'd never build as a worksheet.
 - `edu.contrapaul.com/ai/`: AI literacy, built with AI.
@@ -702,10 +701,6 @@ Tell the audience that these files are for agents and work with any tool. Some h
 ## Part 4: Tab 3, Projects
 
 Links, grouped, with one line each and a small looping preview where available. You choose the final list. The candidates below were live on 2026-10-10.
-
-**For marking and admin**
-- [ ] `edu.contrapaul.com/assessment/report-card-marking/`
-- [ ] `edu.contrapaul.com/assessment/studio-project-marking/`
 
 **For teaching content**
 - [ ] `edu.contrapaul.com/curriculum/dp/` (all 24 DP subtopics)
