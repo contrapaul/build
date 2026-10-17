@@ -21,7 +21,7 @@ Talk: Saturday 17 October 2026, Shenzhen.
 - [ ] Paul: glance at the three new clips (taskanalysis, centralmiddlezhong,
       edusite). The OCR checks found no student data, but they have not been
       watched.
-- [ ] Paul: T2 top three words, T28 story, T25b example and screenshot.
+- [ ] Paul: T28 story, T25b example and screenshot.
 - [ ] Still a dashed box: T4 montage. `~/Downloads/edu-showreel.mp4` (20s,
       30 MB, with audio) might suit it, but it is over the 25 MiB file
       limit and would need re-encoding.
@@ -44,12 +44,39 @@ Talk: Saturday 17 October 2026, Shenzhen.
   fails. Replace it with a `setTimeout` shim in the console before testing.
 - **The `computer` tool's Page_Down sends an empty key.** Test Page Down by
   dispatching a KeyboardEvent instead.
-- **No ffmpeg on this Mac.** Videos were cut with an AVFoundation Swift
-  script: it retimes by a speed factor, drops frames to a steady 30 fps,
-  scales to 1280 wide and encodes H.264 at 2 Mbps with no audio. Keep every
-  file under Cloudflare's 25 MiB per-file limit.
+- **No ffmpeg on this Mac.** `/usr/bin/avconvert` works for plain
+  re-encodes (e.g. `avconvert -s in.mov -p Preset1280x720 -o out.mp4
+  --replace`). The sandbox Swift SDK is a partial AVFoundation, so the
+  fancier cuts were done with an AVFoundation script that retimes, drops
+  frames to a steady 30 fps, scales to 1280 wide and encodes H.264 at
+  2 Mbps with no audio. Keep every file under Cloudflare's 25 MiB
+  per-file limit.
 
 ## Log
+
+### 2026-10-17: T2 is now Cloud
+
+- **Asked:** replace the T2 "you said / top three words" frame with the
+  screen recording of Cloud (added as `media/cloud.mov`) plus context: "We
+  just used one of my tools", "Cloud was created to support an all staff
+  presentation my wife gave, when the 'perfect' tool wasn't available*",
+  "*At least, not available free, and she didn't want another subscription..."
+- **Built:**
+  - `media/cloud.mp4`: the 15.9s, 2790x1560 `.mov` converted with
+    `/usr/bin/avconvert` (Preset1280x720) to 1280x716, H.264, 18.5 MB,
+    under the 25 MiB cap. The `.mov` stays gitignored.
+  - T2 in `index.html` reuses the showcase pattern from T5 to T7c: the clip
+    on the left, kicker "We just used one of my tools", title "Cloud", the
+    two context lines, the cloud.contrapaul.com address and QR. The lede
+    drops the leading "Cloud was" since the title says it.
+  - New `.showcase-foot` style in `css/frames.css` for the asterisk line
+    (small mono, muted), next to the other showcase-info rules.
+- **Decided:** the frame keeps the `h-intro` section class but the
+  `.showcase` hue rotation now colours it `--hue-how` (it is section 2 of
+  the deck). Acceptable: the CSS says showcases are reusable in the Talk.
+- **Unverified:** playback and layout of the new frame in a browser, and
+  the clip content itself (not watched). The T2 speaker notes in PLAN.md
+  still describe the old "what the room said" frame and are now stale.
 
 ### 2026-10-17: the five Talk resources
 
