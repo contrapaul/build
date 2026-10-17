@@ -21,7 +21,7 @@ Talk: Saturday 17 October 2026, Shenzhen.
 - [ ] Paul: glance at the three new clips (taskanalysis, centralmiddlezhong,
       edusite). The OCR checks found no student data, but they have not been
       watched.
-- [ ] Paul: T28 story, T25b example and screenshot.
+
 - [ ] Refresh T19's commit list before the talk.
 - [ ] Rehearse in Firefox on the real projector, with the clicker.
 
@@ -50,6 +50,30 @@ Talk: Saturday 17 October 2026, Shenzhen.
   per-file limit.
 
 ## Log
+
+### 2026-10-17: T28 gets the sports drink strip
+
+- **Asked:** put `media/sportsdrink.webp` (1882x384, 69 KB) on the
+  "A story / Fixing it live, in class" slide, replacing the "to add" box.
+- **Built:** the `.ph` box on T28 is now a `<figure class="clip">` with
+  the image (full-width strip, capped at 64vh by the existing `.clip img`
+  rule). Removed the "T28 story" open item. The deck now has no dashed
+  placeholder boxes left.
+- **Unverified:** I could not view the image. The alt text ("The change
+  made: the sports drink page as fixed live in class") is a guess from
+  the filename and the slide context, and should be checked.
+
+### 2026-10-17: T25b gets the paper sample
+
+- **Asked:** put `media/paper1sample.webp` (1308x1264, 121 KB) on the
+  "Tell students what AI made" slide, replacing the "to add" box.
+- **Built:** the `.ph` box on T25b is now a `<figure class="clip">` with
+  the image, the same pattern as T18. Removed the "T25b example and
+  screenshot" open item (the T28 story one stays).
+- **Unverified:** I could not view the image in this session. The alt
+  text ("A sample student paper with its AI disclosure section") is a
+  guess from the filename and the slide context, and should be checked
+  against what is actually in it.
 
 ### 2026-10-17: T4 placeholder is now a line of text
 
