@@ -236,15 +236,15 @@ Before you start, have two browser tabs open:
 
 **Media:** one looping montage clip, under 10 MB.
 
-### T5 to T7c: five resources, EasyFEA is the third (5:20)
+### T5 to T7c: five resources (5:20)
 
-You choose four of the five. Spend under two minutes on each.
+Spend under two minutes on each. Order: Task Analysis, Central Middlezhong, EasyFEA, Infinite Food Truck, the edu site.
 
-- T5: [Resource 1], placeholder.
-- T6: [Resource 2], placeholder.
-- T7: EasyFEA, done. Same showcase layout as the Projects tab: clip on the left, name, one line, address and QR on the right.
-- T7b: [Resource 4], placeholder.
-- T7c: [Resource 5], placeholder.
+- T5: Task Analysis, done. Showcase frame: clip left, name, one line, address and QR right.
+- T6: Central Middlezhong, done.
+- T7: EasyFEA, done.
+- T7b: Infinite Food Truck, done, reuses the Projects clip.
+- T7c: the edu site, done.
 
 **Each frame:**
 - A full-bleed looping clip of the resource in use.
@@ -705,6 +705,7 @@ Tell the audience that these files are for agents and work with any tool. Some h
 Links, grouped, with one line each and a small looping preview where available. You choose the final list. The candidates below were live on 2026-10-10.
 
 **For teaching content**
+- [x] `edu.contrapaul.com/` (the site itself; already Project 12)
 - [x] `edu.contrapaul.com/tools/easyfea/` (EasyFEA, the FEA sandbox; already a showcase slide)
 - [ ] `edu.contrapaul.com/curriculum/dp/` (all 24 DP subtopics)
 - [ ] `edu.contrapaul.com/curriculum/myp/`
@@ -776,7 +777,7 @@ Glossary rules, kept from localai's style guide:
 ## Before the talk
 
 - [ ] **Decide:**
-  - [ ] the four resources for T5, T6, T7b and T7c
+  - [x] the five resources for T5 to T7c, all done
   - [ ] the final Projects list
 - [ ] **Build P0 to P4 and P7.** Capture screenshots at every P0 step for T16 to T21.
 - [ ] **Write your pieces:**
@@ -785,7 +786,7 @@ Glossary rules, kept from localai's style guide:
   - [ ] which rings to show on the slop poster (T25)
 - [ ] **Record clips,** each small enough for 25 MiB and shared wifi:
   - [ ] the montage (T4)
-  - [ ] one loop per resource (T5 to T7c; the EasyFEA loop is done)
+  - [x] the five resource loops (T5 to T7c), all done
   - [ ] the first build session (T17)
   - [ ] the cloud filling (a backup for C1)
 - [ ] **Prepare the word cloud:**

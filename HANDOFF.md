@@ -18,8 +18,9 @@ Talk: Saturday 17 October 2026, Shenzhen.
 
 - [ ] Paul: test the clicker on `dev/keys.html` and report any row marked
       "not mapped".
-- [ ] Paul: choose the four resources for T5, T6, T7b and T7c (EasyFEA is
-      the third, done), then trim the Projects tab.
+- [ ] Paul: glance at the three new clips (taskanalysis, centralmiddlezhong,
+      edusite). The OCR checks found no student data, but they have not been
+      watched.
 - [ ] Paul: T2 top three words, T28 story, T25b example and screenshot.
 - [ ] Still a dashed box: T4 montage. `~/Downloads/edu-showreel.mp4` (20s,
       30 MB, with audio) might suit it, but it is over the 25 MiB file
@@ -49,6 +50,55 @@ Talk: Saturday 17 October 2026, Shenzhen.
   file under Cloudflare's 25 MiB per-file limit.
 
 ## Log
+
+### 2026-10-17: the five Talk resources
+
+- **Asked:** taskanalysis, centralmiddlezhong and edusite get the same
+  treatment as easyfea. Order in the Talk: taskanalysis first,
+  centralmiddlezhong second, easyfea third, infinitefoodtruck fourth (clip
+  reused), edusite fifth.
+- **Built:**
+  - `media/taskanalysis.mp4` (11.1 MB, 85s) and `media/edusite.mp4`
+    (20.2 MB, 78s): re-encoded with the working export-session recipe, both
+    under the 25 MiB cap, H.264, no audio. The `.mov` files are gitignored.
+  - Talk tab: T5 is Task Analysis, T7b is Infinite Food Truck (reuses
+    `media/infinitefoodtruck.mp4`), T7c is the edu site. All three are
+    showcase frames like EasyFEA, kickers 01, 04 and 05.
+  - T6 is Central Middlezhong: name, one line and address are in, but the
+    frame keeps a dashed box because the recording never arrived. It
+    becomes a showcase frame when the clip lands.
+  - PLAN.md: the T5 to T7c section now lists all five slots and their
+    state; the checklists follow.
+- **Media check:** OCR at 25, 50 and 75 percent of both clips. Task
+  Analysis shows the example scenario (coffee shop, Didi), edusite shows
+  curriculum pages and the quiz builder. No names, no student work.
+- **Blocked:** the centralmiddlezhong recording is not in `media/` or
+  anywhere else on the Mac that I could find. Paul to drop it in. (It
+  arrived later; see the next entry.)
+- **Verified:** file sizes, codec and durations; OCR of both clips; no em
+  dashes; kickers 01 to 05 are in order.
+- **Unverified:** the three new frames in a browser, and Firefox.
+
+### 2026-10-17: Central Middlezhong lands, edusite joins Projects
+
+- **Asked:** the centralmiddlezhong recording has arrived. edusite also gets
+  a Projects tab feature; taskanalysis and centralmiddlezhong do not.
+- **Built:**
+  - `media/centralmiddlezhong.mp4`: the 131 MB `.mov` re-encoded to 20.3 MB,
+    70.8s, under the 25 MiB cap, H.264, no audio.
+  - T6 is now a full showcase frame: clip, name, one line, address, QR.
+    All five Talk resources are done.
+  - Projects tab: the edu site is Project 12 of 12. All eleven existing
+    kickers renumbered to "of 12". Task Analysis and Central Middlezhong
+    stay Talk-only, as asked.
+  - PLAN.md: T6 marked done, the resource checklists ticked, the edu site
+    ticked in the Part 4 candidates.
+- **Media check:** OCR at 25, 50 and 75 percent. Game content only: the
+  footbridge project, Mayor Chen, Councillor Zhang, materials and budget
+  decisions. Fictional characters, no student names or work.
+- **Verified:** file size, codec, duration; OCR of the clip; kickers 01 to
+  12 all say "of 12"; no em dashes.
+- **Unverified:** T6 and Project 12 in a browser, and Firefox.
 
 ### 2026-10-17: EasyFEA on both pages
 
