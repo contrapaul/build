@@ -22,9 +22,6 @@ Talk: Saturday 17 October 2026, Shenzhen.
       edusite). The OCR checks found no student data, but they have not been
       watched.
 - [ ] Paul: T28 story, T25b example and screenshot.
-- [ ] Still a dashed box: T4 montage. `~/Downloads/edu-showreel.mp4` (20s,
-      30 MB, with audio) might suit it, but it is over the 25 MiB file
-      limit and would need re-encoding.
 - [ ] Refresh T19's commit list before the talk.
 - [ ] Rehearse in Firefox on the real projector, with the clicker.
 
@@ -53,6 +50,18 @@ Talk: Saturday 17 October 2026, Shenzhen.
   per-file limit.
 
 ## Log
+
+### 2026-10-17: T4 placeholder is now a line of text
+
+- **Asked:** replace the T4 "a few things I made" montage placeholder box
+  with smaller text: "*By using a range of AI models to turn my ideas into
+  projects which live on the internet."
+- **Built:** the dashed `.ph` box on T4 is now a `<p class="showcase-foot">`
+  with that line. Generalised the `.showcase-foot` selector in
+  `css/frames.css` (was `.showcase-info .showcase-foot`) so it also works
+  on the divider. Removed the stale "T4 montage" open item.
+- **Unverified:** look of the line in a browser (it is small muted mono on
+  a left-aligned divider, 4vh below the title).
 
 ### 2026-10-17: T2 is now Cloud
 
