@@ -163,7 +163,7 @@ The talk is on 17 October and this plan was written on 15 October, so these are 
 |---|---|---|
 | 0 to 3 | Opener on cloud.contrapaul.com | C1 |
 | 3 to 5 | Switch tabs: title, the cloud, who I am | T1 to T3 |
-| 5 to 11 | Things I've made | T4 to T7 |
+| 5 to 11 | Things I've made | T4 to T7c |
 | 11 to 22 | Structure: how it actually works, then this site, step by step | T8 to T21 |
 | 22 to 33 | Habits, rules and tips | T22 to T29 |
 | 33 to 35 | Your turn | T30 |
@@ -171,7 +171,7 @@ The talk is on 17 October and this plan was written on 15 October, so these are 
 
 The 35 minutes of talk are tight. If you're running late, these frames can be cut:
 - T4 (the montage)
-- one of the three resources (T5 to T7)
+- one of the resources (T5 to T7c, EasyFEA is done)
 - T11 (reasoning and thinking: move "thinking" into T10 as one sentence)
 - T27 (reuse: mention it in one line on T26)
 
@@ -218,14 +218,10 @@ Before you start, have two browser tabs open:
 ### T3: Who I am (4:10)
 
 **On screen:**
-- Design teacher. Not a developer.
-- Since April 2026:
-  - 800+ changes to one education site
-  - a dozen live sites
-  - 30+ classroom tools
+- Design Technology Teacher. I design it. I make it. I film it. I fix it.
 
 **Say:**
-- Keep this to under a minute. The numbers earn the next half hour; they're not there to impress.
+- Keep this to under a minute. The four verbs are the designer, the maker, the video creator and the tech person, in one breath.
 - "This isn't a talk about magic wording. It's about structure and habits, which are teaching skills you already have."
 
 **Gloss:** none.
@@ -240,9 +236,15 @@ Before you start, have two browser tabs open:
 
 **Media:** one looping montage clip, under 10 MB.
 
-### T5 to T7: [RESOURCE 1], [RESOURCE 2], [RESOURCE 3] (5:20)
+### T5 to T7c: five resources, EasyFEA is the third (5:20)
 
-You choose these. Spend under two minutes on each.
+You choose four of the five. Spend under two minutes on each.
+
+- T5: [Resource 1], placeholder.
+- T6: [Resource 2], placeholder.
+- T7: EasyFEA, done. Same showcase layout as the Projects tab: clip on the left, name, one line, address and QR on the right.
+- T7b: [Resource 4], placeholder.
+- T7c: [Resource 5], placeholder.
 
 **Each frame:**
 - A full-bleed looping clip of the resource in use.
@@ -703,6 +705,7 @@ Tell the audience that these files are for agents and work with any tool. Some h
 Links, grouped, with one line each and a small looping preview where available. You choose the final list. The candidates below were live on 2026-10-10.
 
 **For teaching content**
+- [x] `edu.contrapaul.com/tools/easyfea/` (EasyFEA, the FEA sandbox; already a showcase slide)
 - [ ] `edu.contrapaul.com/curriculum/dp/` (all 24 DP subtopics)
 - [ ] `edu.contrapaul.com/curriculum/myp/`
 - [ ] `edu.contrapaul.com/ai/`
@@ -773,7 +776,7 @@ Glossary rules, kept from localai's style guide:
 ## Before the talk
 
 - [ ] **Decide:**
-  - [ ] the three resources for T5 to T7
+  - [ ] the four resources for T5, T6, T7b and T7c
   - [ ] the final Projects list
 - [ ] **Build P0 to P4 and P7.** Capture screenshots at every P0 step for T16 to T21.
 - [ ] **Write your pieces:**
@@ -782,7 +785,7 @@ Glossary rules, kept from localai's style guide:
   - [ ] which rings to show on the slop poster (T25)
 - [ ] **Record clips,** each small enough for 25 MiB and shared wifi:
   - [ ] the montage (T4)
-  - [ ] one loop per resource (T5 to T7)
+  - [ ] one loop per resource (T5 to T7c; the EasyFEA loop is done)
   - [ ] the first build session (T17)
   - [ ] the cloud filling (a backup for C1)
 - [ ] **Prepare the word cloud:**

@@ -58,13 +58,6 @@
 .title-grid .byline b { color: var(--ink); }
 @media (max-width: 900px) { .title-grid { grid-template-columns: 1fr; } }
 
-/* ---------- T3 stats ------------------------------------------ */
-
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2vw; margin-top: 5vh; }
-.stat { border-top: 2px solid var(--hue); padding-top: 1.4vh; }
-.stat .n { font: 900 clamp(48px, 7vw, 132px) var(--font-display); line-height: .9; }
-.stat .l { color: var(--ink-soft); font-size: clamp(16px, 1.1vw + 6px, 26px); }
-@media (max-width: 700px) { .stats { grid-template-columns: 1fr; } }
 
 /* ---------- T9 chatbot vs harness ----------------------------- */
 

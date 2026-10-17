@@ -18,8 +18,8 @@ Talk: Saturday 17 October 2026, Shenzhen.
 
 - [ ] Paul: test the clicker on `dev/keys.html` and report any row marked
       "not mapped".
-- [ ] Paul: choose the three resources for T5 to T7, then trim the Projects
-      tab.
+- [ ] Paul: choose the four resources for T5, T6, T7b and T7c (EasyFEA is
+      the third, done), then trim the Projects tab.
 - [ ] Paul: T2 top three words, T28 story, T25b example and screenshot.
 - [ ] Still a dashed box: T4 montage. `~/Downloads/edu-showreel.mp4` (20s,
       30 MB, with audio) might suit it, but it is over the 25 MiB file
@@ -49,6 +49,63 @@ Talk: Saturday 17 October 2026, Shenzhen.
   file under Cloudflare's 25 MiB per-file limit.
 
 ## Log
+
+### 2026-10-17: EasyFEA on both pages
+
+- **Asked:** EasyFEA joins the site. A showcase slide on the Projects tab, and
+  a showcase frame in the Talk, as the third of five resources. Four more
+  resources come later.
+- **Built:**
+  - `media/easyfea.mp4`: the 62 MB `.mov` re-encoded to 19.2 MB, 1280x716,
+    H.264, 56.65s, no audio, under the 25 MiB cap. The `.mov` is gitignored
+    like the rest.
+  - Projects tab: EasyFEA is Project 11 of 11, same showcase slide as the
+    other ten. All ten existing kickers renumbered to "of 11".
+  - Talk tab: EasyFEA takes the third resource slot (T7) with the reusable
+    showcase layout, clip left, name, one line, address and QR right. Two
+    new placeholder frames, T7b and T7c, make it five resources. T8 and
+    after keep their numbers; on-screen frame numbers for everything after
+    T7 shift by two, so deep links past frame 7 move.
+  - The Talk one-liner is written for the room (what students use it for),
+    not the site's meta description, which the Projects slide keeps.
+  - PLAN.md: the T5 to T7 section is now T5 to T7c with the five slots
+    listed; the cut list, timing table and checklists follow. EasyFEA is
+    ticked in the Part 4 candidates.
+- **Media check:** this model cannot view images, so the still check was
+  done by OCR instead. Frames at 11s, 28s and 45s contain site content
+  only: products, materials, results and challenges, all "NOT YET". No
+  names, no student work. Paul should still glance at the clip.
+- **Gotcha:** this sandbox's Swift SDK is a partial AVFoundation.
+  `AVAssetWriterOutput`, `videoSettings` and `AVVideoBitRateKey` do not
+  resolve, and `export()` is async only. The working recipe is
+  `AVAssetExportSession` with `AVAssetExportPreset1280x720` and
+  `fileLengthLimit` set to 20 MiB, top-level `await` on `export()`.
+  No ffmpeg and `afconvert` is audio only.
+- **Verified:** file size, codec and duration; OCR of three frames; no em
+  dashes; the kickers all say "of 11".
+- **Unverified:** the two new frames in a browser, the EasyFEA clip
+  playing, and Firefox.
+
+### 2026-10-17: T3 loses the numbers, gains the four verbs
+
+- **Asked:** remove the stat numbers from T3, keep "Design Technology
+  Teacher", and replace "Not a developer" with a creative line that says
+  Paul is also a designer, a maker, a video creator and a tech person.
+- **Built:**
+  - New headline: "Design Technology Teacher. I design it. I make it. I
+    film it. I fix it." Each verb is one role. The second sentence keeps
+    the existing outline styling.
+  - The three stats and their CSS (`.stats`, `.stat` in `css/frames.css`)
+    are removed; nothing else used them.
+  - PLAN.md T3 updated: the on-screen line, the say note, and the old
+    "the numbers earn the next half hour" line, which no longer applies.
+- **Decided:** verb beats over a job-title list. "Designer. Maker.
+  Filmmaker. Tech person." reads like a CV; "I design it. I make it. I
+    film it. I fix it." reads from the back of the room and the "it" is
+    the website, which the whole talk is about. Paul may reword.
+- **Verified:** no references to `.stats` or `.stat` remain. Paul should
+  check the frame in a browser: the headline is now the only content, so
+  the frame is sparser than before.
 
 ### 2026-10-17: Projects tab is showcase slides
 
